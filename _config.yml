@@ -50,21 +50,23 @@ nav:
 
 # Author info
 author:
-  name: "Naeem Shahabi Sani"
+  name: "Your Name"
   avatar: "/assets/images/profile.jpg"
-  bio: "PhD student in Computer Science at the University of Oklahoma, focusing on feature engineering and classification using bio inspired algorithms."
+  bio: "Short personal bio here"
   location: "Norman, Oklahoma, USA"
-  # Optionally include your social profiles:
-   social:
-     - label: "GitHub"
+
+  # If you have social links, use a properly indented list:
+  social:
+    - label: "GitHub"
       icon: "fab fa-github"
-       url: "https://github.com/naeemshb"
-     - label: "Google Scholar"
-       icon: "ai ai-google-scholar"
-       url: "https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en"
-  #   - label: "LinkedIn"
-  #     icon: "fab fa-linkedin"
-  #     url: "https://www.linkedin.com/in/YOUR_PROFILE/"
+      url: "https://github.com/naeemshb"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/YOUR_PROFILE"
+    - label: "Google Scholar"
+      icon: "ai ai-google-scholar"
+      url: "https://scholar.google.com/citations?user=YOUR_ID"
+
 
 # Pagination
 paginate: 5
