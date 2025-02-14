@@ -1,15 +1,20 @@
 ---
-# Front matter to tell Jekyll to process this file
+# Jekyll front matter to process this file
 ---
 
-/* Example: Use a Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+/* Example: Move social icons closer to the avatar */
 
-body {
-  font-family: 'Open Sans', sans-serif;
+.author__urls {
+  margin-top: 0;       /* remove extra top spacing */
 }
 
-/* Adjust heading sizes */
-h1, .site-title {
-  font-weight: 700;
+.author__avatar {
+  margin-bottom: 0;    /* pull the avatar and icons closer together */
 }
+
+/* If you want to center them or move them to the right, you can add:
+.author__urls {
+  display: flex;
+  justify-content: center;
+}
+*/
