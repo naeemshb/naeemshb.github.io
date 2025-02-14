@@ -14,7 +14,11 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
-
+# Minimal Mistakes advanced config
+sass:
+  load_paths:
+    - _sass
+    - node_modules
 # Enable dark or another color scheme:
 # Minimal Mistakes has built‐in skins: "default", "dark", "forest", etc.
 minimal_mistakes_skin: "dark"
