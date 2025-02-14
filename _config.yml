@@ -87,13 +87,13 @@ google_site_verification: "YOUR_GOOGLE_SITE_VERIFICATION_CODE"
 
 # Social profiles (replace with your own)
 author:
-  name: "Your Name"
+  name: "Naeem Shahabi Sani"
   # Optional fields:
   # avatar: "/assets/images/profile.jpg"
   social:
     twitter: your_twitter_username
     linkedin: your_linkedin_slug
-    scholar: your_google_scholar_link
+    scholar: https://scholar.google.com/citations?hl=en&user=acImM0IAAAAJ
     github: your_github_username
     orcid: your_orcid_id
 
