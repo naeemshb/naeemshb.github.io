@@ -1,9 +1,6 @@
 ---
-# Tell Jekyll to process this file as SCSS
+# Jekyll front matter
 ---
 
-// Import the entire Minimal Mistakes theme
 @import "minimal-mistakes";
-
-// Then import your overrides
-@import "assets/css/custom";
+@import "custom";   // Jekyll will find custom.scss in assets/css/
