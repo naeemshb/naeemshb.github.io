@@ -2,16 +2,16 @@
 # Basic Site Settings
 # -----------------------------------------------------------
 title: "My Academic Website"
-description: "A personal academic website built with Minimal Mistakes"
+description: "An academic website built with Jekyll & Minimal Mistakes"
 url: "https://naeemshb.github.io"
-baseurl: ""  # If hosting at 'username.github.io', leave this empty
+baseurl: ""  # leave empty if using username.github.io
+twitter_username: "YourTwitterID"
+github_username: "naeemshb"
 
 # -----------------------------------------------------------
-# GitHub & Build Configuration
+# Theme and Plugins
 # -----------------------------------------------------------
-# Minimal Mistakes remote theme
 remote_theme: "mmistakes/minimal-mistakes"
-
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
@@ -19,17 +19,12 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# -----------------------------------------------------------
-# Minimal Mistakes Theme Settings
-# -----------------------------------------------------------
-# Remove or comment out any default "theme:" line if present
-# theme: jekyll-theme-minimal # not needed because remote_theme is used
+# Minimal Mistakes options
+minimal_mistakes_skin: "dark"  # Switch to a dark color scheme
 
-# Reading and Layout
-markdown: kramdown
-show_excerpt_separator: true
-
+# -----------------------------------------------------------
 # Default Layouts
+# -----------------------------------------------------------
 defaults:
   - scope:
       path: ""
@@ -41,28 +36,11 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: false
-
-# Pagination
-paginate: 5
-paginate_path: "page:num"
-
-# Enable or disable specific features
-minimal_mistakes_skin: "default"  # For color schemes see the MM docs
-# Minimal Mistakes includes many additional config options, such as:
-#   - author profiles
-#   - social links
-#   - analytics
-#   - table of contents
-# See https://mmistakes.github.io/minimal-mistakes/docs/configuration/
 
 # -----------------------------------------------------------
-# Site Navigation
+# Navigation
 # -----------------------------------------------------------
-# Provide a structured menu for quick navigation.
-# The "title" will appear in the site’s navigation bar.
-# "url" references either an internal page (e.g. /about/) or external link.
-
+# These links will appear in the top menu bar.
 nav:
   - title: "Home"
     url: "/"
@@ -72,39 +50,39 @@ nav:
     url: "/research/"
   - title: "Publications"
     url: "/publications/"
-  - title: "Blog"
-    url: "/blog/"
-  - title: "CV"
-    url: "/cv/"
   - title: "Contact"
     url: "/contact/"
 
 # -----------------------------------------------------------
-# SEO and Social
+# Author and Social
 # -----------------------------------------------------------
-# Optional but recommended
-google_site_verification: "YOUR_GOOGLE_SITE_VERIFICATION_CODE"
-
-# Social profiles (replace with your own)
 author:
   name: "Naeem Shahabi Sani"
-  # Optional fields:
-  # avatar: "/assets/images/profile.jpg"
-  social:
-    twitter: your_twitter_username
-    linkedin: your_linkedin_slug
-    scholar: https://scholar.google.com/citations?hl=en&user=acImM0IAAAAJ
-    github: your_github_username
-    orcid: your_orcid_id
+  avatar: "/assets/images/profile.jpg"
+  bio: "PhD student in Computer Science at the University of Oklahoma, focusing on feature engineering, bio-inpired algorithms and classification."
+  location: "Norman, Oklahoma, USA"
+
+# Example extended social links
+# (uncomment & fill in as desired)
+# social:
+#   - label: "LinkedIn"
+#     icon: "fab fa-linkedin"
+#     url: "https://www.linkedin.com/in/YOUR_PROFILE"
+#   - label: "Scholar"
+#     icon: "ai ai-google-scholar"
+#     url: "https://scholar.google.com/citations?user=YOUR_USER_ID"
+#   - label: "GitHub"
+#     icon: "fab fa-github"
+#     url: "https://github.com/naeemshb"
 
 # -----------------------------------------------------------
-# Build Settings
+# Pagination + Build Settings
 # -----------------------------------------------------------
+paginate: 5
+paginate_path: "page:num"
+
 exclude:
   - Gemfile
   - Gemfile.lock
-  - node_modules
   - vendor
-
-# Activate Jekyll SEO Tag and other recommended plugins
-# so <head> metadata, sitemap, etc. get generated.
+  - node_modules
