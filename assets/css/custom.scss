@@ -1,0 +1,15 @@
+---
+# Front matter to tell Jekyll to process this file
+---
+
+/* Example: Use a Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Adjust heading sizes */
+h1, .site-title {
+  font-weight: 700;
+}
