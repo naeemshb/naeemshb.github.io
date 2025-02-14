@@ -62,15 +62,15 @@ author:
   job_title: "PhD Student at OU"
 
   social:
-    - label: "GitHub"
-      icon: "fab fa-github"
-      url: "https://github.com/naeemshb"
+    - label: "Scholar"
+      icon: "ai ai-google-scholar"
+      url: "https://scholar.google.com/citations?user=YOUR_ID"
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/YOUR_PROFILE"
-    - label: "Google Scholar"
-      icon: "ai ai-google-scholar"
-      url: "https://scholar.google.com/citations?user=YOUR_ID"
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/naeemshb"
 
 # Configure pagination if you create a blog with multiple posts
 paginate: 5
