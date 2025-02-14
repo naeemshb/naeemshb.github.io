@@ -2,12 +2,12 @@
 # Jekyll front matter
 ---
 
-/* Decrease the spacing so icons appear closer to the avatar. */
-
-.author__avatar {
-  margin-bottom: 0;  /* remove bottom margin below the avatar */
+/* Make social icons and their labels smaller */
+.author__urls {
+  font-size: 0.9em; /* or 0.8em, as you prefer */
 }
 
-.author__urls {
-  margin-top: 0;     /* bring icons up under the avatar/name area */
+/* If you also want to shrink the location icon specifically: */
+.author__location i.fa-map-marker-alt {
+  font-size: 0.9em;
 }
