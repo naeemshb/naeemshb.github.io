@@ -54,10 +54,11 @@ nav:
 
 # Author info
 author:
-  name: "Your Name"
+  name: "Naeem Shahabi Sani"
   avatar: "/assets/images/profile.jpg"
-  bio: "Short personal bio here"
   location: "Norman, Oklahoma, USA"
+  # Optional job title that appears under your name:
+  job_title: "PhD Student at OU"
 
   # If you have social links, use a properly indented list:
   social:
