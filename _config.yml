@@ -1,29 +1,30 @@
 title: "Naeem's Academic Website"
 description: "A personal academic website built with Jekyll and Minimal Mistakes"
-# Replace the URL with your actual GitHub Pages URL:
 url: "https://naeemshb.github.io"
-baseurl: ""  # If you're using username.github.io, leave this empty
+baseurl: ""  # Leave empty if your site is at username.github.io
 
-# Minimal Mistakes remote theme
+# Minimal Mistakes theme (remote)
 remote_theme: "mmistakes/minimal-mistakes"
 
-# Plugins to enhance your site
+# Plugins to enhance the site
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
-# Minimal Mistakes advanced config
+  - jekyll-sass-converter
+
+# Load custom SCSS from these folders
 sass:
   load_paths:
     - _sass
     - node_modules
-# Enable dark or another color scheme:
-# Minimal Mistakes has built‐in skins: "default", "dark", "forest", etc.
+
+# Use one of Minimal Mistakes’ built-in skins: "dark", "default", "solarized", etc.
 minimal_mistakes_skin: "dark"
 
-# Default Jekyll layout settings
+# Default layouts for pages/posts
 defaults:
   - scope:
       path: ""
@@ -37,7 +38,7 @@ defaults:
       layout: single
       author_profile: true
 
-# Site navigation
+# Navigation bar links
 nav:
   - title: "Home"
     url: "/"
@@ -47,20 +48,19 @@ nav:
     url: "/research/"
   - title: "Publications"
     url: "/publications/"
-  - title: "CV"
-    url: "/cv/"
-  - title: "Contact"
-    url: "/contact/"
+  # Add or remove items as you wish:
+  # - title: "CV"
+  #   url: "/cv/"
+  # - title: "Contact"
+  #   url: "/contact/"
 
-# Author info
+# Author information (for big circular avatar + details at top)
 author:
   name: "Naeem Shahabi Sani"
-  avatar: "/assets/images/profile.jpg"
+  avatar: "/assets/images/profile.jpg"  # Ensure 'profile.jpg' exists under 'assets/images/'
   location: "Norman, Oklahoma, USA"
-  # Optional job title that appears under your name:
   job_title: "PhD Student at OU"
 
-  # If you have social links, use a properly indented list:
   social:
     - label: "GitHub"
       icon: "fab fa-github"
@@ -72,8 +72,7 @@ author:
       icon: "ai ai-google-scholar"
       url: "https://scholar.google.com/citations?user=YOUR_ID"
 
-
-# Pagination
+# Configure pagination if you create a blog with multiple posts
 paginate: 5
 paginate_path: "page:num"
 
@@ -82,7 +81,4 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
-  - README.md  # if you don't want it to become a page
-
-# Plugins config
-# (Auto included by "jekyll-seo-tag" and "jekyll-sitemap")
+  - README.md
