@@ -17,9 +17,7 @@ sass:
   load_paths:
     - _sass
     - node_modules
-    # remove: - assets/css
 
-# Make sure Jekyll includes main.scss in the build:
 include:
   - main.scss
 
