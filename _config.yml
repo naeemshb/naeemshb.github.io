@@ -62,12 +62,14 @@ author:
   job_title: "PhD Student at OU"
 
   social:
-    - label: "Scholar"
-      icon: "ai ai-google-scholar"
+    - label: ""   # leave blank for no text
+      icon: "ai ai-google-scholar
       url: "https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en"
+      
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/naeem-shahabi-sani-a50909254/"
+      
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/naeemshb"
