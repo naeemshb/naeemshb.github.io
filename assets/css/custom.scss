@@ -1,20 +1,13 @@
 ---
-# Jekyll front matter to process this file
+# Jekyll front matter
 ---
 
-/* Example: Move social icons closer to the avatar */
-
-.author__urls {
-  margin-top: 0;       /* remove extra top spacing */
-}
+/* Decrease the spacing so icons appear closer to the avatar. */
 
 .author__avatar {
-  margin-bottom: 0;    /* pull the avatar and icons closer together */
+  margin-bottom: 0;  /* remove bottom margin below the avatar */
 }
 
-/* If you want to center them or move them to the right, you can add:
 .author__urls {
-  display: flex;
-  justify-content: center;
+  margin-top: 0;     /* bring icons up under the avatar/name area */
 }
-*/
