@@ -1,45 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 
-/* Your SCSS overrides here */
+/* Example overrides */
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 8px !important;
 }
 
-/* Make .author__name tiny */
-.author__content .author__name {
-  font-size: 0.2rem !important;
-  font-weight: 400;
-  color: #ff00ff; /* Pink, just to see if it definitely changes */
-}
-
-/* Make .author__job_title smaller */
-.author__content .author__job_title {
-  font-size: 0.2rem !important;
-  font-style: italic;
-  color: #00ffff; /* Light aqua, easy to see if it changes */
-}
-
-/* Make location smaller */
-.author__content .author__location {
-  font-size: 5rem !important;
-  color: #999;
-}
-
-/* Social icons smaller */
-.author__urls {
-  font-size: 0.7em !important;
-  margin-top: 0;
-}
-
-/* Fine-tune margins */
-.author__name {
-  margin-bottom: 3em;
-}
-.author__job_title {
-  margin-top: 0;
-  margin-bottom: 0.2em;
-}
-.author__location {
-  margin-top: 0;
-}
+/* .author__content .author__name, .author__job_title, .author__location, etc. */
