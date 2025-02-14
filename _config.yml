@@ -1,9 +1,10 @@
 remote_theme: mmistakes/minimal-mistakes
 plugins:
   - jekyll-remote-theme
+  - jekyll-include-cache
 
-# Optional: Keep or remove your old 'theme:' line if you have it
-# theme: jekyll-theme-minimal  <-- remove or comment out if present
+# Optional: Keep or remove your old ‘theme:’ line if you have it
+# theme: jekyll-theme-minimal
 
 # You can also keep other settings like title, description, etc.
 title: "My Personal Site"
