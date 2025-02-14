@@ -2,40 +2,63 @@
 # Jekyll front matter to process this file as SCSS
 ---
 
-/* 1. Example: Import a Google font (Open Sans) */
+/* 1. Import Google Font (Open Sans) */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 /* 2. Change default body font and size */
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 13px; /* Adjust as you prefer, e.g., 14px, 17px, etc. */
+  font-size: 13px; /* Adjust as preferred (e.g., 14px, 16px, etc.) */
 }
 
-/* 3. Adjust heading sizes or font-family */
+/* 3. Adjust global headings or site-title font */
 h1, .site-title {
   font-family: 'Open Sans', sans-serif;
-  font-size: 2rem;  /* e.g., 2em, 2.5rem, etc. */
-  line-height: 1.2; /* Adjust spacing between heading lines if needed */
+  font-size: 2rem;  
+  line-height: 1.2;
 }
+
 h2, .author__name {
   font-size: 1.75rem;
 }
+
 h3 {
   font-size: 1.5rem;
 }
 
-/* 4. Keep your existing icon spacing tweaks */
+/* 4. Existing tweaks for avatar & social icons */
 .author__avatar {
-  margin-bottom: 0; /* remove bottom margin below the avatar */
+  margin-bottom: 0; /* remove extra space under avatar */
 }
 
 .author__urls {
-  margin-top: 0;    /* bring icons up under the avatar/name area */
-  font-size: 0.9em; /* optionally make the icon/text a bit smaller */
+  margin-top: 0; 
+  font-size: 0.9em; /* make icons slightly smaller */
 }
 
-/* 5. Optional: Tweak location icon size or color */
+/* 5. Optional: Customize location icon size/color */
 .author__location i.fa-map-marker-alt {
   font-size: 0.9em;
-  color: #ff6b6b; /* example color override if you want a red marker */
+  color: #ff6b6b; 
+}
+
+/* 6. Fine-tune each author detail (name, job title, location) */
+.author__name {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.author__job_title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555;
+}
+
+.author__location {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #999;
+  margin-top: 0.25rem; /* small gap above location text */
 }
