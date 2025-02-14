@@ -58,7 +58,7 @@ nav:
 # -----------------------------------------------------------
 author:
   name: "Naeem Shahabi Sani"
-  avatar: "/assets/images/profile.jpg"
+  avatar: "https://github.com/YourUsername/YourRepoName/blob/main/assets/images/profile.jpg"
   bio: "PhD student in Computer Science at the University of Oklahoma, focusing on feature engineering, bio-inpired algorithms and classification."
   location: "Norman, Oklahoma, USA"
 
