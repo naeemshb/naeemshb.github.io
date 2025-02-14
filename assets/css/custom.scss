@@ -1,13 +1,41 @@
 ---
-# Jekyll front matter
+# Jekyll front matter to process this file as SCSS
 ---
 
-/* Make social icons and their labels smaller */
-.author__urls {
-  font-size: 0.9em; /* or 0.8em, as you prefer */
+/* 1. Example: Import a Google font (Open Sans) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* 2. Change default body font and size */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px; /* Adjust as you prefer, e.g., 14px, 17px, etc. */
 }
 
-/* If you also want to shrink the location icon specifically: */
+/* 3. Adjust heading sizes or font-family */
+h1, .site-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;  /* e.g., 2em, 2.5rem, etc. */
+  line-height: 1.2; /* Adjust spacing between heading lines if needed */
+}
+h2, .author__name {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+/* 4. Keep your existing icon spacing tweaks */
+.author__avatar {
+  margin-bottom: 0; /* remove bottom margin below the avatar */
+}
+
+.author__urls {
+  margin-top: 0;    /* bring icons up under the avatar/name area */
+  font-size: 0.9em; /* optionally make the icon/text a bit smaller */
+}
+
+/* 5. Optional: Tweak location icon size or color */
 .author__location i.fa-map-marker-alt {
   font-size: 0.9em;
+  color: #ff6b6b; /* example color override if you want a red marker */
 }
