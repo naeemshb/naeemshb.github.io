@@ -58,7 +58,7 @@ author:
   name: "Naeem Shahabi Sani"
   avatar: "/assets/images/profile.jpg"  # Ensure 'profile.jpg' exists under 'assets/images/'
   location: "Norman, Oklahoma, USA"
-  job_title: "Graduate Teaching Assistant"
+  job_title: "Teaching Assistant"
   social:
     - label: ""   # leave blank for no text
       icon: "ai ai-google-scholar"       # <-- Fixed missing quote here
