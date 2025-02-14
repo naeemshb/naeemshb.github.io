@@ -3,5 +3,4 @@
 ---
 
 @import "minimal-mistakes";
-@import "custom";  // or "custom.scss"
-
+@import "./assets/css/custom.scss";  // relative path from main.scss
