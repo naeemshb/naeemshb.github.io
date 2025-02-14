@@ -7,19 +7,19 @@
 /* Force a small base font */
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 12px !important;
+  font-size: 8px !important;
 }
 
 /* Make .author__name tiny */
 .author__content .author__name {
-  font-size: 0.7rem !important;
+  font-size: 0.2rem !important;
   font-weight: 700;
   color: #ff00ff; /* Pink, just to see if it definitely changes */
 }
 
 /* Make .author__job_title smaller */
 .author__content .author__job_title {
-  font-size: 0.6rem !important;
+  font-size: 0.2rem !important;
   font-style: italic;
   color: #00ffff; /* Light aqua, easy to see if it changes */
 }
