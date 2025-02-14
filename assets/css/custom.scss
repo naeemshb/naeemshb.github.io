@@ -1,6 +1,5 @@
----
----
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
 /* Your SCSS overrides here */
 body {
   font-family: 'Open Sans', sans-serif;
@@ -32,17 +31,15 @@ body {
   font-size: 0.7em !important;
   margin-top: 0;
 }
+
+/* Fine-tune margins */
 .author__name {
-  margin-bottom: 3em; /* tiny space under name */
+  margin-bottom: 3em;
 }
-
 .author__job_title {
-  margin-top: 0;        /* remove space above job title */
-  margin-bottom: 0.2em; /* tiny space under job title */
+  margin-top: 0;
+  margin-bottom: 0.2em;
 }
-
 .author__location {
-  margin-top: 0;        /* remove space above location */
-  /* no margin-bottom if it's the last line */
+  margin-top: 0;
 }
-
