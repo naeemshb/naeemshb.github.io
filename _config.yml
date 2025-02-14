@@ -1,12 +1,10 @@
 title: ""
 description: "A personal academic website built with Jekyll and Minimal Mistakes"
 url: "https://naeemshb.github.io"
-baseurl: ""  # Leave empty if your site is at username.github.io
+baseurl: ""
 
-# Minimal Mistakes theme (remote)
 remote_theme: "mmistakes/minimal-mistakes"
 
-# Plugins to enhance the site
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
@@ -15,16 +13,17 @@ plugins:
   - jekyll-sitemap
   - jekyll-sass-converter
 
-# Load custom SCSS from these folders
 sass:
   load_paths:
     - _sass
     - node_modules
 
-# Use one of Minimal Mistakes’ built-in skins: "dark", "default", "solarized", etc.
+# Make sure Jekyll includes main.scss in the build:
+include:
+  - main.scss
+
 minimal_mistakes_skin: "dark"
 
-# Default layouts for pages/posts
 defaults:
   - scope:
       path: ""
@@ -38,7 +37,6 @@ defaults:
       layout: single
       author_profile: true
 
-# Navigation bar links
 nav:
   - title: "Home"
     url: "/"
@@ -48,31 +46,23 @@ nav:
     url: "/research/"
   - title: "Publications"
     url: "/publications/"
-  # - title: "CV"
-  #   url: "/cv/"
-  # - title: "Contact"
-  #   url: "/contact/"
 
-# Author information (for big circular avatar + details at top)
 author:
   name: "Naeem Shahabi Sani"
-  avatar: "/assets/images/profile.jpg"  # Ensure 'profile.jpg' exists under 'assets/images/'
+  avatar: "/assets/images/profile.jpg"
   location: "Norman, Oklahoma, USA"
   job_title: "Teaching Assistant"
   social:
-    - label: ""   # leave blank for no text
-      icon: "ai ai-google-scholar"       # <-- Fixed missing quote here
+    - label: ""
+      icon: "ai ai-google-scholar"
       url: "https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en"
-
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/naeem-shahabi-sani-a50909254/"
-
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/naeemshb"
 
-# Configure pagination if you create a blog with multiple posts
 paginate: 5
 paginate_path: "page:num"
 
