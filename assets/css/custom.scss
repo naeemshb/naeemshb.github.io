@@ -4,44 +4,34 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-/* Global body font and size */
+/* Force a small base font */
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 13px;
+  font-size: 12px !important;
 }
 
-/* Headings */
-h1, .site-title {
-  font-size: 2rem;
-  line-height: 1.2;
-}
-
-/* Only change h2, not .author__name */
-h2 {
-  font-size: 1.75rem;
-}
-
-/* Author name: smaller size now that we removed conflicts */
-.author__name {
-  font-size: 0.8rem;
+/* Make .author__name tiny */
+.author__content .author__name {
+  font-size: 0.7rem !important;
   font-weight: 700;
+  color: #ff00ff; /* Pink, just to see if it definitely changes */
 }
 
-/* Job title smaller, italic */
-.author__job_title {
-  font-size: 0.7rem;
+/* Make .author__job_title smaller */
+.author__content .author__job_title {
+  font-size: 0.6rem !important;
   font-style: italic;
+  color: #00ffff; /* Light aqua, easy to see if it changes */
 }
 
-/* Location smaller */
-.author__location {
-  font-size: 0.7rem;
+/* Make location smaller */
+.author__content .author__location {
+  font-size: 0.6rem !important;
   color: #999;
-  margin-top: 0.25rem;
 }
 
-/* Icons spacing & smaller icons */
+/* Social icons smaller */
 .author__urls {
+  font-size: 0.7em !important;
   margin-top: 0;
-  font-size: 0.8em;  
 }
