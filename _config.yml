@@ -1,17 +1,13 @@
-# -----------------------------------------------------------
-# Basic Site Settings
-# -----------------------------------------------------------
-title: "My Academic Website"
-description: "An academic website built with Jekyll & Minimal Mistakes"
+title: "Naeem's Academic Website"
+description: "A personal academic website built with Jekyll and Minimal Mistakes"
+# Replace the URL with your actual GitHub Pages URL:
 url: "https://naeemshb.github.io"
-baseurl: ""  # leave empty if using username.github.io
-twitter_username: "YourTwitterID"
-github_username: "naeemshb"
+baseurl: ""  # If you're using username.github.io, leave this empty
 
-# -----------------------------------------------------------
-# Theme and Plugins
-# -----------------------------------------------------------
+# Minimal Mistakes remote theme
 remote_theme: "mmistakes/minimal-mistakes"
+
+# Plugins to enhance your site
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
@@ -19,12 +15,11 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Minimal Mistakes options
-minimal_mistakes_skin: "dark"  # Switch to a dark color scheme
+# Enable dark or another color scheme:
+# Minimal Mistakes has built‐in skins: "default", "dark", "forest", etc.
+minimal_mistakes_skin: "dark"
 
-# -----------------------------------------------------------
-# Default Layouts
-# -----------------------------------------------------------
+# Default Jekyll layout settings
 defaults:
   - scope:
       path: ""
@@ -36,11 +31,9 @@ defaults:
       type: posts
     values:
       layout: single
+      author_profile: true
 
-# -----------------------------------------------------------
-# Navigation
-# -----------------------------------------------------------
-# These links will appear in the top menu bar.
+# Site navigation
 nav:
   - title: "Home"
     url: "/"
@@ -50,39 +43,39 @@ nav:
     url: "/research/"
   - title: "Publications"
     url: "/publications/"
+  - title: "CV"
+    url: "/cv/"
   - title: "Contact"
     url: "/contact/"
 
-# -----------------------------------------------------------
-# Author and Social
-# -----------------------------------------------------------
+# Author info
 author:
   name: "Naeem Shahabi Sani"
-  avatar: "https://github.com/YourUsername/YourRepoName/blob/main/assets/images/profile.jpg"
-  bio: "PhD student in Computer Science at the University of Oklahoma, focusing on feature engineering, bio-inpired algorithms and classification."
+  avatar: "/assets/images/profile.jpg"
+  bio: "PhD student in Computer Science at the University of Oklahoma, focusing on feature engineering and classification using bio inspired algorithms."
   location: "Norman, Oklahoma, USA"
+  # Optionally include your social profiles:
+   social:
+     - label: "GitHub"
+      icon: "fab fa-github"
+       url: "https://github.com/naeemshb"
+     - label: "Google Scholar"
+       icon: "ai ai-google-scholar"
+       url: "https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en"
+  #   - label: "LinkedIn"
+  #     icon: "fab fa-linkedin"
+  #     url: "https://www.linkedin.com/in/YOUR_PROFILE/"
 
-# Example extended social links
-# (uncomment & fill in as desired)
-# social:
-#   - label: "LinkedIn"
-#     icon: "fab fa-linkedin"
-#     url: "https://www.linkedin.com/in/YOUR_PROFILE"
-#   - label: "Scholar"
-#     icon: "ai ai-google-scholar"
-#     url: "https://scholar.google.com/citations?user=YOUR_USER_ID"
-#   - label: "GitHub"
-#     icon: "fab fa-github"
-#     url: "https://github.com/naeemshb"
-
-# -----------------------------------------------------------
-# Pagination + Build Settings
-# -----------------------------------------------------------
+# Pagination
 paginate: 5
 paginate_path: "page:num"
 
 exclude:
   - Gemfile
   - Gemfile.lock
-  - vendor
   - node_modules
+  - vendor
+  - README.md  # if you don't want it to become a page
+
+# Plugins config
+# (Auto included by "jekyll-seo-tag" and "jekyll-sitemap")
