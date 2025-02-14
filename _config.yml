@@ -48,7 +48,6 @@ nav:
     url: "/research/"
   - title: "Publications"
     url: "/publications/"
-  # Add or remove items as you wish:
   # - title: "CV"
   #   url: "/cv/"
   # - title: "Contact"
@@ -59,17 +58,16 @@ author:
   name: "Naeem Shahabi Sani"
   avatar: "/assets/images/profile.jpg"  # Ensure 'profile.jpg' exists under 'assets/images/'
   location: "Norman, Oklahoma, USA"
-  job_title: "PhD Student at OU"
-
+  job_title: "Graduate Teaching Assistant"
   social:
     - label: ""   # leave blank for no text
-      icon: "ai ai-google-scholar
+      icon: "ai ai-google-scholar"       # <-- Fixed missing quote here
       url: "https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en"
-      
+
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/naeem-shahabi-sani-a50909254/"
-      
+
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/naeemshb"
