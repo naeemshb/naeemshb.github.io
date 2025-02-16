@@ -14,7 +14,7 @@ main:
 
   - title: "A new strategy in trust-based recommender system using k-means clustering"
     authors:
-      - name: "N. Shahabi Sani"
+      - name: "Naeem Shahabi Sani"
       - name: "Ferial Najian Tabriz"
     conference: "International Journal of Advanced Computer Science and Applications (IJACSA)"
     pdf: "path/to/your-paper2.pdf"
