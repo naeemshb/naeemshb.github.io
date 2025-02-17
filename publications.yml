@@ -9,8 +9,7 @@ main:
         url: "https://scholar.google.co.uk/citations?hl=en&user=1AMRgUYN1UC"
     conference: "Journal of Ambient Intelligence and Humanized Computing"
     pdf: "https://link.springer.com/article/10.1007/s12652-018-1159-7"
-    # image: "assets/images/publications/entnet.png"
-    # awards: []
+
 
   - title: "A new strategy in trust-based recommender system using k-means clustering"
     authors:
@@ -18,11 +17,6 @@ main:
         url: "https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en" 
       - name: "Ferial Najian Tabriz"
         url: "https://scholar.google.com/citations?user=EC6bsXsAAAAJ&hl=en"
-      - name: "N. Shahabi Sani"
-      - name: "Ferial Najian Tabriz"
     conference: "International Journal of Advanced Computer Science and Applications (IJACSA)"
     pdf: "path/to/your-paper2.pdf"
-    # code: "https://github.com/username/paper2-code"
-    # page: ""
-    # image: ""
-    # awards: []
+
