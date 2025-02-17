@@ -18,5 +18,5 @@ main:
       - name: "Ferial Najian Tabriz"
         url: "https://scholar.google.com/citations?user=EC6bsXsAAAAJ&hl=en"
     conference: "International Journal of Advanced Computer Science and Applications (IJACSA)"
-    pdf: "path/to/your-paper2.pdf"
+    pdf: "https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f"
 
