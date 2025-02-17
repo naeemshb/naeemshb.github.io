@@ -14,15 +14,12 @@ main:
 
   - title: "A new strategy in trust-based recommender system using k-means clustering"
     authors:
-<<<<<<< HEAD
       - name: "Naeem Shahabi Sani"
         url: "https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en" 
       - name: "Ferial Najian Tabriz"
         url: "https://scholar.google.com/citations?user=EC6bsXsAAAAJ&hl=en"
-=======
       - name: "N. Shahabi Sani"
       - name: "Ferial Najian Tabriz"
->>>>>>> 9916c76 (Initial commit for website)
     conference: "International Journal of Advanced Computer Science and Applications (IJACSA)"
     pdf: "path/to/your-paper2.pdf"
     # code: "https://github.com/username/paper2-code"
