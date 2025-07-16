@@ -428,213 +428,221 @@
 </section>
 
 
-      <!-- Publications Section -->
+
+<!-- Projects Section -->
+<section class="section" id="projects">
+  <h2>Projects</h2>
+  <ul style="list-style: disc; margin-left: 1.5rem;">
+    <li>
+      <a href="https://github.com/naeemshb/PRF" target="_blank">
+        Probabilistic Random Forest (PRF)
+      </a> — An uncertainty‑aware Random Forest implementation that handles measurement uncertainties in both input features and labels, making it significantly more robust in real-world scenarios where data inherently contains noise.
+    </li>
+  </ul>
+</section>
+
+<!-- Publications Section -->
 <section class="section" id="publications">
   <h2>Selected Publications</h2>
   <div id="publications-container">
 
     <!-- Publication 1 -->
-	<div class="publication">
-	  <div class="pub-title">
-		<!-- The text is inside the link, and we used "pub-title" as the class name -->
-		<a href="https://link.springer.com/article/10.1007/s12652-018-1159-7" target="_blank">
-		  A multi-objective ant colony optimization algorithm for community detection in complex networks
-		</a>
-	  </div>
-	  <div class="pub-authors">
-		N. Shahabi Sani, Mohammad Manthouri, Faezeh Farivar
-	  </div>
-	  <div class="pub-meta">
-		<span class="pub-badge">
-		  Journal of Ambient Intelligence and Humanized Computing
-		</span>
-	  </div>
-	  <div class="pub-links">
-		<a href="path/to/your-paper1.pdf" target="_blank">PDF</a>
-		<a href="https://github.com/username/paper1-code" target="_blank">Code</a>
-	  </div>
-	</div>
+    <div class="publication">
+      <div class="pub-content">
+        <div class="pub-title">
+          <a href="https://link.springer.com/article/10.1007/s12652-018-1159-7" target="_blank">
+            A multi-objective ant colony optimization algorithm for community detection in complex networks
+          </a>
+        </div>
+        <div class="pub-authors">
+          N. Shahabi Sani, Mohammad Manthouri, Faezeh Farivar
+        </div>
+        <div class="pub-meta">
+          <span class="pub-badge">
+            Journal of Ambient Intelligence and Humanized Computing
+          </span>
+        </div>
+        <div class="pub-links">
+          <a href="https://link.springer.com/article/10.1007/s12652-018-1159-7" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
 
-	<!-- Publication 2 -->
-	<div class="publication">
-	  <div class="pub-title">
-		<a href="https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f" target="_blank">
-		  A new strategy in trust-based recommender system using k-means clustering
-		</a>
-	  </div>
-	  <div class="pub-authors">
-		N. Shahabi Sani, Ferial Najian Tabriz
-	  </div>
-	  <div class="pub-meta">
-		<span class="pub-badge">
-		  International Journal of Advanced Computer Science and Applications (IJACSA)
-		</span>
-	  </div>
-	  </div>
-	  <div class="pub-links">
-		<a href="path/to/your-paper2.pdf" target="_blank">PDF</a>
-		<a href="https://github.com/username/paper2-code" target="_blank">Code</a>
-	  </div>
-	
+    <!-- Publication 2 -->
+    <div class="publication">
+      <div class="pub-content">
+        <div class="pub-title">
+          <a href="https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f" target="_blank">
+            A new strategy in trust-based recommender system using k-means clustering
+          </a>
+        </div>
+        <div class="pub-authors">
+          N. Shahabi Sani, Ferial Najian Tabriz
+        </div>
+        <div class="pub-meta">
+          <span class="pub-badge">
+            International Journal of Advanced Computer Science and Applications (IJACSA)
+          </span>
+        </div>
+        <div class="pub-links">
+          <a href="https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
 
-
-    <!-- Add more .publication blocks as needed -->
-    
   </div>
 </section>
 
+<!-- Contact Section -->
+<section class="section" id="contact">
+  <h2>Contact</h2>
+  <p>
+    For inquiries, please email me at <a href="mailto:shahabi@ou.edu">shahabi@ou.edu</a>. I look forward to connecting!
+  </p>
+</section>
+</div>
+</div>
 
-      
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" title="Scroll to Top">
+<i class="fas fa-arrow-up"></i>
+</button>
 
-      <!-- Contact Section -->
-      <section class="section" id="contact">
-        <h2>Contact</h2>
-        <p>
-          For inquiries, please email me at <a href="mailto:shahabi@ou.edu">shahabi@ou.edu</a>. I look forward to connecting!
-        </p>
-      </section>
-    </div>
-  </div>
+<!-- Publications Loader Script -->
+<script>
+async function parseAuthors(authors) {
+if (!Array.isArray(authors)) return "";
+return authors
+  .map((author, index) => {
+    const authorHTML = author.url
+      ? `<a href="${author.url}" target="_blank">${author.name}</a>`
+      : author.name;
+    return authorHTML + (index < authors.length - 1 ? ", " : "");
+  })
+  .join("");
+}
 
-  <!-- Scroll to Top Button -->
-  <button id="scrollTopBtn" title="Scroll to Top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+async function loadPublications() {
+try {
+  const response = await fetch("publications.yml");
+  if (!response.ok) throw new Error("Failed to load publications.yml");
+  const yamlText = await response.text();
+  const publications = jsyaml.load(yamlText).main;
 
-  <!-- Publications Loader Script -->
-  <script>
-    async function parseAuthors(authors) {
-      if (!Array.isArray(authors)) return "";
-      return authors
-        .map((author, index) => {
-          const authorHTML = author.url
-            ? `<a href="${author.url}" target="_blank">${author.name}</a>`
-            : author.name;
-          return authorHTML + (index < authors.length - 1 ? ", " : "");
-        })
-        .join("");
+  const container = document.getElementById("publications-container");
+  container.innerHTML = "";
+
+  const listDiv = document.createElement("div");
+  listDiv.className = "publications-list";
+
+  for (const pub of publications) {
+    const pubDiv = document.createElement("div");
+    pubDiv.className = "publication";
+
+    let imageHtml = "";
+    if (pub.image && pub.image.length > 0) {
+      imageHtml = `
+        <div class="pub-image">
+          <img src="${pub.image}" alt="${pub.title}" onerror="this.style.display='none'">
+        </div>
+      `;
     }
 
-    async function loadPublications() {
-      try {
-        const response = await fetch("publications.yml");
-        if (!response.ok) throw new Error("Failed to load publications.yml");
-        const yamlText = await response.text();
-        const publications = jsyaml.load(yamlText).main;
-
-        const container = document.getElementById("publications-container");
-        container.innerHTML = "";
-
-        const listDiv = document.createElement("div");
-        listDiv.className = "publications-list";
-
-        for (const pub of publications) {
-          const pubDiv = document.createElement("div");
-          pubDiv.className = "publication";
-
-          let imageHtml = "";
-          if (pub.image && pub.image.length > 0) {
-            imageHtml = `
-              <div class="pub-image">
-                <img src="${pub.image}" alt="${pub.title}" onerror="this.style.display='none'">
-              </div>
-            `;
-          }
-
-          let awardsHtml = "";
-          if (pub.awards) {
-            awardsHtml = `
-              <div class="pub-awards">
-                ${pub.awards
-                  .map(
-                    (award) => `
-                  <span class="award-badge ${award.type}">
-                    ${
-                      award.type === "best-poster"
-                        ? '<i class="fas fa-award"></i>'
-                        : ""
-                    }
-                    ${
-                      award.type === "top-paper"
-                        ? '<i class="fas fa-star"></i>'
-                        : ""
-                    }
-                    ${award.text}
-                  </span>
-                `
-                  )
-                  .join("")}
-              </div>
-            `;
-          }
-
-          const authorsHtml = await parseAuthors(pub.authors);
-
-          pubDiv.innerHTML = `
-            ${imageHtml}
-            <div class="pub-content">
-              <div class="pub-title">
-                ${
-                  pub.pdf
-                    ? `<a href="${pub.pdf}" target="_blank">${pub.title}</a>`
-                    : pub.title
-                }
-              </div>
-              <div class="pub-authors">${authorsHtml}</div>
-              <div class="pub-meta">
-                <span class="pub-badge">${pub.conference || ""}</span>
-                ${awardsHtml}
-              </div>
-              <div class="pub-links">
-                ${
-                  pub.pdf
-                    ? `<a href="${pub.pdf}" target="_blank">PDF</a>`
-                    : ""
-                }
-                ${
-                  pub.page
-                    ? `<a href="${pub.page}" target="_blank">Project</a>`
-                    : ""
-                }
-                ${
-                  pub.code
-                    ? `<a href="${pub.code}" target="_blank">Code</a>`
-                    : ""
-                }
-              </div>
-            </div>
-          `;
-          listDiv.appendChild(pubDiv);
-        }
-
-        container.appendChild(listDiv);
-      } catch (error) {
-        console.error("Error loading publications:", error);
-        document.getElementById("publications-container").innerHTML =
-          "<p>Error loading publications. Please check the console for details.</p>";
-      }
+    let awardsHtml = "";
+    if (pub.awards) {
+      awardsHtml = `
+        <div class="pub-awards">
+          ${pub.awards
+            .map(
+              (award) => `
+            <span class="award-badge ${award.type}">
+              ${
+                award.type === "best-poster"
+                  ? '<i class="fas fa-award"></i>'
+                  : ""
+              }
+              ${
+                award.type === "top-paper"
+                  ? '<i class="fas fa-star"></i>'
+                  : ""
+              }
+              ${award.text}
+            </span>
+          `
+            )
+            .join("")}
+        </div>
+      `;
     }
 
-    // Scroll to Top Button functionality
-    window.addEventListener("scroll", () => {
-      const scrollBtn = document.getElementById("scrollTopBtn");
-      if (window.scrollY > 300) {
-        scrollBtn.classList.add("show");
-      } else {
-        scrollBtn.classList.remove("show");
-      }
-    });
+    const authorsHtml = await parseAuthors(pub.authors);
 
-    document.getElementById("scrollTopBtn").addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    pubDiv.innerHTML = `
+      ${imageHtml}
+      <div class="pub-content">
+        <div class="pub-title">
+          ${
+            pub.pdf
+              ? `<a href="${pub.pdf}" target="_blank">${pub.title}</a>`
+              : pub.title
+          }
+        </div>
+        <div class="pub-authors">${authorsHtml}</div>
+        <div class="pub-meta">
+          <span class="pub-badge">${pub.conference || ""}</span>
+          ${awardsHtml}
+        </div>
+        <div class="pub-links">
+          ${
+            pub.pdf
+              ? `<a href="${pub.pdf}" target="_blank">PDF</a>`
+              : ""
+          }
+          ${
+            pub.page
+              ? `<a href="${pub.page}" target="_blank">Project</a>`
+              : ""
+          }
+          ${
+            pub.code
+              ? `<a href="${pub.code}" target="_blank">Code</a>`
+              : ""
+          }
+        </div>
+      </div>
+    `;
+    listDiv.appendChild(pubDiv);
+  }
 
-    // Load publications on page load
-    window.addEventListener("DOMContentLoaded", loadPublications);
-  </script>
-  <!-- Footer or Last Updated Section -->
-  <footer style="text-align: center; padding: 1rem; margin-top: 2rem;">
-    <p>Last updated on: February 27, 2025</p>
-  </footer>
+  container.appendChild(listDiv);
+} catch (error) {
+  console.error("Error loading publications:", error);
+  document.getElementById("publications-container").innerHTML =
+    "<p>Error loading publications. Please check the console for details.</p>";
+}
+}
+
+// Scroll to Top Button functionality
+window.addEventListener("scroll", () => {
+const scrollBtn = document.getElementById("scrollTopBtn");
+if (window.scrollY > 300) {
+  scrollBtn.classList.add("show");
+} else {
+  scrollBtn.classList.remove("show");
+}
+});
+
+document.getElementById("scrollTopBtn").addEventListener("click", function () {
+window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Load publications on page load
+window.addEventListener("DOMContentLoaded", loadPublications);
+</script>
+
+<!-- Footer or Last Updated Section -->
+<footer style="text-align: center; padding: 1rem; margin-top: 2rem;">
+<p>Last updated on: February 27, 2025</p>
+</footer>
 </body>
 </html>
