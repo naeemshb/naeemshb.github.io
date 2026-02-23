@@ -410,24 +410,41 @@
 		  
         </ul>
       </section>
+
 <section class="section" id="active-researches">
-  <h2>Active Researches </h2>
-  <p></p>
+  <h2>Active Researches</h2>
   <ul style="list-style: disc; margin-left: 1.5rem;">
     <li>
-      <strong>A Dragonfly and Ants at Work: A Hybrid Bio-Inspired Framework for Active Learning in Community Detection</strong>
+      <strong><a href="https://arxiv.org/abs/2602.13864" target="_blank">Evolving Multi-Channel Confidence-Aware Activation Functions for Missing Data with Channel Propagation</a></strong>
       <br>
-      <em>Status: Paper in progress (January 2025)</em>
+      <em>Naeem Shahabi Sani, Ferial Najiantabriz, Shayan Shafaei, Dean F. Hougen</em>
+      <br>
+      <em>Status: Submitted (2026)</em>
       <br>
       <small>
-        <strong>Abstract:</strong> I introduce a bio-inspired hybrid approach that combines Ant Colony Optimization and the Dragonfly algorithm for <em>feature selection</em> and community detection in complex networks. By integrating an active learning component, the framework reduces labeling costs while enhancing model robustness. Preliminary results on benchmark datasets (e.g., Zachary’s Karate Club) demonstrate improved modularity, labeling efficiency, and stability compared to baseline methods.
+        <strong>Abstract:</strong> We propose a method to handle missing data in neural networks by developing custom activation functions. Rather than using standard functions like ReLU that only consider feature values, we employ genetic programming to create multivariate functions incorporating the feature value, missingness indicators, and confidence scores. We introduce ChannelProp, an algorithm that tracks these reliability signals throughout the network. Testing on datasets with various types of missingness shows our approach improves classification performance compared to conventional methods that don't account for data quality indicators.
       </small>
     </li>
-    <!-- Add more items if needed -->
+    <li>
+      <strong>One-Shot Federated Low-Rank Matrix Factorization</strong>
+      <br>
+      <em>Status: Recently Accepted (2026)</em>
+      <br>
+      <small>
+        <strong>Abstract:</strong> Low-rank matrix factorization (LRMF) is a fundamental problem with broad applications. In recent years, federated LRMF has gained intensive interests due to the increasing ethical concerns on data privacy and advancement of IoT and edge computing infrastructure. However, current federated LRMF algorithms are based on gradient descent, which requires repeated communication between distributed clients and a center. Such repeated communication is extremely inefficient and has many downsides from the energy and security perspectives. In this paper, we propose the first one-shot federated LRMF algorithm called OFMF. It only requires one round of client-center communication, by leveraging the idea of random matrix factorization. Efficiency analysis suggests OFMF is more efficient than current algorithms in both communication and local computation. Through experiments on three real-world data sets, we show OFMF achieves similar or better factorization performance than prior algorithm, while substantially improves the overall factorization efficiency (e.g., 40 times faster). We also evaluate a differentially private version of OFMF and show it performs similarly, which means OFMF additionally gains differential privacy for free.
+      </small>
+    </li>
+    <li>
+      <strong>Randomized Least Square for Efficient Low-Rank Matrix Recovery</strong>
+      <br>
+      <em>Status: Submitted (2026)</em>
+      <br>
+      <small>
+        <strong>Abstract:</strong> Low-rank matrix recovery is a fundamental problem. Popular recovery techniques such as alternate least square (ALS) or nuclear norm minimization all require iterative optimization of the recovered matrix, which limits their efficiency. In this paper, we propose an extremely fast recovery technique based on randomized least square (RLSMR). It does not require iterative optimization, for it randomly assigns one low-rank factor and only optimizes another low-rank factor once (which are then used to recover the matrix). In experiment, we show RLSMR runs substantially faster than other techniques while maintaining competitive performance.
+      </small>
+    </li>
   </ul>
 </section>
-
-
 
 <!-- Projects Section -->
 <section class="section" id="projects">
