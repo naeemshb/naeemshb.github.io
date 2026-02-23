@@ -209,6 +209,83 @@
       line-height: 1.6;
       margin-bottom: 1rem;
     }
+    /* Active Researches Section */
+    .research-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .research-card {
+      background-color: var(--paper-bg);
+      padding: 1rem 1.2rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .research-card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+    .research-card .research-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--heading-color);
+      margin-bottom: 0.4rem;
+    }
+    .research-card .research-title a {
+      color: var(--heading-color);
+      transition: color 0.2s ease;
+    }
+    .research-card .research-title a:hover {
+      color: var(--link-color);
+    }
+    .research-card .research-authors {
+      font-size: 0.85rem;
+      color: #bbbbbb;
+      margin-bottom: 0.3rem;
+    }
+    .research-card .research-status {
+      font-size: 0.8rem;
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+    .research-status.submitted {
+      background-color: rgba(255, 165, 0, 0.15);
+      color: #ffa500;
+      border: 1px solid rgba(255, 165, 0, 0.3);
+    }
+    .research-status.accepted {
+      background-color: rgba(0, 200, 83, 0.15);
+      color: #00c853;
+      border: 1px solid rgba(0, 200, 83, 0.3);
+    }
+    .research-card .research-abstract {
+      font-size: 0.85rem;
+      color: #aaaaaa;
+      line-height: 1.5;
+      margin-top: 0.5rem;
+      display: none;
+    }
+    .research-card .research-abstract.open {
+      display: block;
+    }
+    .research-card .toggle-abstract {
+      font-size: 0.8rem;
+      color: var(--link-color);
+      cursor: pointer;
+      background: none;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .research-card .toggle-abstract:hover {
+      background-color: var(--link-color);
+      color: var(--bg-gradient-start);
+    }
+
     /* Interests Section */
     .interests ul {
       list-style: disc;
@@ -413,37 +490,42 @@
 
 <section class="section" id="active-researches">
   <h2>Active Researches</h2>
-  <ul style="list-style: disc; margin-left: 1.5rem;">
-    <li>
-      <strong><a href="https://arxiv.org/abs/2602.13864" target="_blank">Evolving Multi-Channel Confidence-Aware Activation Functions for Missing Data with Channel Propagation</a></strong>
+  <div class="research-list">
+
+    <div class="research-card">
+      <div class="research-title">
+        <a href="https://arxiv.org/abs/2602.13864" target="_blank">Evolving Multi-Channel Confidence-Aware Activation Functions for Missing Data with Channel Propagation</a>
+      </div>
+      <div class="research-authors">Naeem Shahabi Sani, Ferial Najiantabriz, Shayan Shafaei, Dean F. Hougen</div>
+      <span class="research-status submitted">Submitted (2026)</span>
       <br>
-      <em>Naeem Shahabi Sani, Ferial Najiantabriz, Shayan Shafaei, Dean F. Hougen</em>
+      <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
+      <div class="research-abstract">
+        We propose a method to handle missing data in neural networks by developing custom activation functions. Rather than using standard functions like ReLU that only consider feature values, we employ genetic programming to create multivariate functions incorporating the feature value, missingness indicators, and confidence scores. We introduce ChannelProp, an algorithm that tracks these reliability signals throughout the network. Testing on datasets with various types of missingness shows our approach improves classification performance compared to conventional methods that don't account for data quality indicators.
+      </div>
+    </div>
+
+    <div class="research-card">
+      <div class="research-title">One-Shot Federated Low-Rank Matrix Factorization</div>
+      <span class="research-status accepted">Recently Accepted (2026)</span>
       <br>
-      <em>Status: Submitted (2026)</em>
+      <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
+      <div class="research-abstract">
+        Low-rank matrix factorization (LRMF) is a fundamental problem with broad applications. In recent years, federated LRMF has gained intensive interests due to the increasing ethical concerns on data privacy and advancement of IoT and edge computing infrastructure. However, current federated LRMF algorithms are based on gradient descent, which requires repeated communication between distributed clients and a center. Such repeated communication is extremely inefficient and has many downsides from the energy and security perspectives. In this paper, we propose the first one-shot federated LRMF algorithm called OFMF. It only requires one round of client-center communication, by leveraging the idea of random matrix factorization. Efficiency analysis suggests OFMF is more efficient than current algorithms in both communication and local computation. Through experiments on three real-world data sets, we show OFMF achieves similar or better factorization performance than prior algorithm, while substantially improves the overall factorization efficiency (e.g., 40 times faster). We also evaluate a differentially private version of OFMF and show it performs similarly, which means OFMF additionally gains differential privacy for free.
+      </div>
+    </div>
+
+    <div class="research-card">
+      <div class="research-title">Randomized Least Square for Efficient Low-Rank Matrix Recovery</div>
+      <span class="research-status submitted">Submitted (2026)</span>
       <br>
-      <small>
-        <strong>Abstract:</strong> We propose a method to handle missing data in neural networks by developing custom activation functions. Rather than using standard functions like ReLU that only consider feature values, we employ genetic programming to create multivariate functions incorporating the feature value, missingness indicators, and confidence scores. We introduce ChannelProp, an algorithm that tracks these reliability signals throughout the network. Testing on datasets with various types of missingness shows our approach improves classification performance compared to conventional methods that don't account for data quality indicators.
-      </small>
-    </li>
-    <li>
-      <strong>One-Shot Federated Low-Rank Matrix Factorization</strong>
-      <br>
-      <em>Status: Recently Accepted (2026)</em>
-      <br>
-      <small>
-        <strong>Abstract:</strong> Low-rank matrix factorization (LRMF) is a fundamental problem with broad applications. In recent years, federated LRMF has gained intensive interests due to the increasing ethical concerns on data privacy and advancement of IoT and edge computing infrastructure. However, current federated LRMF algorithms are based on gradient descent, which requires repeated communication between distributed clients and a center. Such repeated communication is extremely inefficient and has many downsides from the energy and security perspectives. In this paper, we propose the first one-shot federated LRMF algorithm called OFMF. It only requires one round of client-center communication, by leveraging the idea of random matrix factorization. Efficiency analysis suggests OFMF is more efficient than current algorithms in both communication and local computation. Through experiments on three real-world data sets, we show OFMF achieves similar or better factorization performance than prior algorithm, while substantially improves the overall factorization efficiency (e.g., 40 times faster). We also evaluate a differentially private version of OFMF and show it performs similarly, which means OFMF additionally gains differential privacy for free.
-      </small>
-    </li>
-    <li>
-      <strong>Randomized Least Square for Efficient Low-Rank Matrix Recovery</strong>
-      <br>
-      <em>Status: Submitted (2026)</em>
-      <br>
-      <small>
-        <strong>Abstract:</strong> Low-rank matrix recovery is a fundamental problem. Popular recovery techniques such as alternate least square (ALS) or nuclear norm minimization all require iterative optimization of the recovered matrix, which limits their efficiency. In this paper, we propose an extremely fast recovery technique based on randomized least square (RLSMR). It does not require iterative optimization, for it randomly assigns one low-rank factor and only optimizes another low-rank factor once (which are then used to recover the matrix). In experiment, we show RLSMR runs substantially faster than other techniques while maintaining competitive performance.
-      </small>
-    </li>
-  </ul>
+      <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
+      <div class="research-abstract">
+        Low-rank matrix recovery is a fundamental problem. Popular recovery techniques such as alternate least square (ALS) or nuclear norm minimization all require iterative optimization of the recovered matrix, which limits their efficiency. In this paper, we propose an extremely fast recovery technique based on randomized least square (RLSMR). It does not require iterative optimization, for it randomly assigns one low-rank factor and only optimizes another low-rank factor once (which are then used to recover the matrix). In experiment, we show RLSMR runs substantially faster than other techniques while maintaining competitive performance.
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- Projects Section -->
@@ -657,6 +739,13 @@ if (window.scrollY > 300) {
 document.getElementById("scrollTopBtn").addEventListener("click", function () {
 window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+// Toggle abstract visibility
+function toggleAbstract(btn) {
+  const abstract = btn.nextElementSibling;
+  abstract.classList.toggle("open");
+  btn.textContent = abstract.classList.contains("open") ? "See less" : "See more";
+}
 
 // Load publications on page load
 window.addEventListener("DOMContentLoaded", loadPublications);
