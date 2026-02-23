@@ -378,6 +378,14 @@
     [data-theme="dark"] .status-badge.accepted {
       color: #00c853;
     }
+    .status-badge.in-progress {
+      background-color: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+      border: 1px solid rgba(33, 150, 243, 0.25);
+    }
+    [data-theme="dark"] .status-badge.in-progress {
+      color: #64b5f6;
+    }
 
     /* Toggle Abstract Button */
     .toggle-abstract {
@@ -671,6 +679,16 @@
             <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
             <div class="card-abstract">
               Low-rank matrix recovery is a fundamental problem. Popular recovery techniques such as alternate least square (ALS) or nuclear norm minimization all require iterative optimization of the recovered matrix, which limits their efficiency. In this paper, we propose an extremely fast recovery technique based on randomized least square (RLSMR). It does not require iterative optimization, for it randomly assigns one low-rank factor and only optimizes another low-rank factor once (which are then used to recover the matrix). In experiment, we show RLSMR runs substantially faster than other techniques while maintaining competitive performance.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">A Dragonfly and Ants at Work: A Hybrid Bio-Inspired Framework for Active Learning in Community Detection</div>
+            <span class="status-badge in-progress">Paper in Progress</span>
+            <br>
+            <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
+            <div class="card-abstract">
+              We introduce a bio-inspired hybrid approach that combines Ant Colony Optimization and the Dragonfly algorithm for feature selection and community detection in complex networks. By integrating an active learning component, the framework reduces labeling costs while enhancing model robustness. Preliminary results on benchmark datasets (e.g., Zachary's Karate Club) demonstrate improved modularity, labeling efficiency, and stability compared to baseline methods.
             </div>
           </div>
 
