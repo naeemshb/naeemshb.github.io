@@ -2,12 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Naeem Shahabi Sani – Teaching Assistant, Researcher in Feature Engineering & Machine Learning" />
-  <meta name="keywords" content="Naeem Shahabi Sani, Teaching Assistant, Machine Learning, Feature Engineering" />
+  <meta name="description" content="Naeem Shahabi Sani – PhD Candidate, Researcher in Feature Engineering & Machine Learning at the University of Oklahoma" />
+  <meta name="keywords" content="Naeem Shahabi Sani, PhD, Machine Learning, Feature Engineering, Bio-Inspired Optimization" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naeem Shahabi Sani</title>
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Naeem Shahabi Sani – Researcher & PhD Candidate" />
+  <meta property="og:description" content="PhD Candidate in Computer Science at the University of Oklahoma. Research in bio-inspired optimization, feature engineering, and machine learning." />
+  <meta property="og:image" content="https://naeemshb.github.io/assets/images/profile.jpg" />
+  <meta property="og:url" content="https://naeemshb.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+
   <!-- Favicon -->
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -21,49 +35,66 @@
     /* Light theme (default) */
     :root {
       --bg-gradient-start: #f5f5f5;
-      --bg-gradient-end: #e8e8e8;
+      --bg-gradient-end: #eaeaea;
       --text-color: #333333;
       --heading-color: #1a1a1a;
-      --link-color: #d48000;
-      --border-color: #cccccc;
+      --link-color: #c47200;
+      --border-color: #d5d5d5;
       --paper-bg: #ffffff;
-      --navbar-bg: rgba(255, 255, 255, 0.85);
+      --navbar-bg: rgba(255, 255, 255, 0.9);
+      --navbar-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
       --muted-color: #666666;
       --social-icon-color: #2e7d32;
       --code-color: #2e7d32;
-      --font-family-base: "Crimson Pro", serif;
+      --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      --card-hover-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      --sidebar-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      --font-family-base: "Crimson Pro", Georgia, serif;
       --font-family-mono: "Ubuntu Mono", monospace;
     }
     /* Dark theme */
     [data-theme="dark"] {
-      --bg-gradient-start: #2f2f2f;
-      --bg-gradient-end: #3a3a3a;
-      --text-color: #dddddd;
-      --heading-color: #ffffff;
+      --bg-gradient-start: #1e1e1e;
+      --bg-gradient-end: #2a2a2a;
+      --text-color: #d8d8d8;
+      --heading-color: #f0f0f0;
       --link-color: #ffa500;
-      --border-color: #505050;
-      --paper-bg: #3a3a3a;
-      --navbar-bg: rgba(0, 0, 0, 0.25);
-      --muted-color: #bbbbbb;
-      --social-icon-color: #006400;
-      --code-color: #00ff00;
+      --border-color: #404040;
+      --paper-bg: #2d2d2d;
+      --navbar-bg: rgba(20, 20, 20, 0.9);
+      --navbar-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+      --muted-color: #aaaaaa;
+      --social-icon-color: #4caf50;
+      --code-color: #4caf50;
+      --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      --card-hover-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+      --sidebar-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
     }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom right, var(--bg-gradient-start), var(--bg-gradient-end));
+      background: linear-gradient(160deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      min-height: 100vh;
       color: var(--text-color);
       font-family: var(--font-family-base);
-      line-height: 1.6;
+      font-size: 1.05rem;
+      line-height: 1.7;
       transition: background 0.3s ease, color 0.3s ease;
     }
     a {
       color: var(--link-color);
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: color 0.2s ease, opacity 0.2s ease;
     }
     a:hover {
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     /* ============================
@@ -75,73 +106,85 @@
       z-index: 100;
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      padding: 1rem 0;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
       background: var(--navbar-bg);
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--navbar-shadow);
     }
     .navbar a {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      font-weight: 600;
       color: var(--text-color);
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
       display: inline-block;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.2s ease, color 0.2s ease;
     }
-    .navbar a:hover {
-      background-color: rgba(255, 165, 0, 0.2);
+    .navbar a:hover,
+    .navbar a.active {
+      background-color: var(--link-color);
+      color: #fff;
+      opacity: 1;
     }
 
     /* ============================
-       3. Two‐Column Layout
+       3. Two-Column Layout
        ============================ */
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
       display: flex;
-      gap: 2rem;
-      padding: 2rem;
+      gap: 2.5rem;
+      padding: 2.5rem 2rem;
     }
-    /* Left Column: Profile, Social, Education & Code Animation */
+
+    /* Left Column: Profile Sidebar */
     .left-col {
-      flex: 0 0 300px;
+      flex: 0 0 280px;
       display: flex;
       flex-direction: column;
       align-items: center;
       background: var(--paper-bg);
-      padding: 1.5rem;
-      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
       border: 1px solid var(--border-color);
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      box-shadow: var(--sidebar-shadow);
+      align-self: flex-start;
+      position: sticky;
+      top: 80px;
     }
     .profile-img {
-      width: 160px;
-      height: 160px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--border-color);
-      margin-bottom: 1rem;
-      transition: transform 0.3s ease;
+      border: 3px solid var(--border-color);
+      margin-bottom: 1.2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .profile-img:hover {
-      transform: scale(1.03);
+      transform: scale(1.04);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
     .name {
-      font-size: 1.4rem;
-      font-weight: bold;
-      margin-bottom: 0.3rem;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
       color: var(--heading-color);
+      text-align: center;
     }
     .role {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
+      color: var(--muted-color);
+      margin-bottom: 0.2rem;
+      text-align: center;
+    }
+    .location {
+      font-size: 0.82rem;
       color: var(--muted-color);
       margin-bottom: 0.3rem;
-    }
-    /* New Location with clickable link */
-    .location {
-      font-size: 0.8rem;
-      color: var(--muted-color);
-      margin-bottom: 0.5rem;
     }
     .location a {
       color: inherit;
@@ -152,185 +195,257 @@
     }
     .email {
       font-family: var(--font-family-mono);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--muted-color);
-      margin-top: 0.5rem;
+      margin-top: 0.3rem;
     }
     .social-icons {
       display: flex;
-      gap: 0.8rem;
+      gap: 0.7rem;
       margin-top: 1rem;
     }
-    /* Social icons */
     .social-icons a {
       color: var(--social-icon-color);
-      font-size: 1.2rem;
-      transition: color 0.2s ease;
+      font-size: 1.3rem;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      transition: all 0.2s ease;
     }
     .social-icons a:hover {
-      color: var(--link-color);
+      color: #fff;
+      background-color: var(--link-color);
+      border-color: var(--link-color);
+      opacity: 1;
     }
-    /* Education block under profile image */
+
+    /* Sidebar Divider */
+    .sidebar-divider {
+      width: 80%;
+      height: 1px;
+      background: var(--border-color);
+      margin: 1.5rem 0;
+    }
+
+    /* Education block */
     .education {
-      margin-top: 2rem;
       width: 100%;
       text-align: left;
     }
     .education h3 {
       color: var(--heading-color);
       margin-bottom: 0.5rem;
-      font-size: 1.1rem;
+      font-size: 1rem;
+      font-weight: 700;
     }
     .education ul {
-      list-style: disc;
-      margin-left: 1.2rem;
-      margin-bottom: 1rem;
-      font-size: 0.85rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0.82rem;
     }
-    /* Simple Coding Animation (Typewriter Effect) */
-    .code-animation {
-      font-family: 'Courier New', monospace;
-      color: var(--code-color);
-      font-size: 0.9rem;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 0.15em solid var(--code-color);
-      margin-top: 1.5rem;
-      width: 0;
-      animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+    .education li {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border-color);
+      line-height: 1.4;
     }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
+    .education li:last-child {
+      border-bottom: none;
     }
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: var(--code-color); }
+    .education .degree {
+      font-weight: 600;
+      color: var(--heading-color);
+    }
+    .education .school {
+      color: var(--muted-color);
+      font-size: 0.78rem;
     }
 
     /* Right Column: Main Content */
     .right-col {
       flex: 1;
+      min-width: 0;
     }
     .section {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
     .section h2 {
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
       color: var(--heading-color);
-      border-bottom: 2px solid var(--border-color);
-      padding-bottom: 0.3rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--link-color);
+      padding-bottom: 0.4rem;
       display: inline-block;
     }
     .biography {
-      text-align: justify;    
-      line-height: 1.6;
+      text-align: justify;
+      line-height: 1.7;
       margin-bottom: 1rem;
     }
-    /* Active Researches Section */
-    .research-list {
+
+    /* Research Interests as Tags */
+    .interests-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .interest-tag {
+      font-size: 0.85rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      background: var(--paper-bg);
+      color: var(--text-color);
+      transition: all 0.2s ease;
+    }
+    .interest-tag:hover {
+      border-color: var(--link-color);
+      color: var(--link-color);
+    }
+
+    /* Card Styles (shared by Active Researches, Publications, Projects, Teaching) */
+    .card-list {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
-    .research-card {
+    .card {
       background-color: var(--paper-bg);
-      padding: 1rem 1.2rem;
-      border-radius: 6px;
+      padding: 1.2rem 1.4rem;
+      border-radius: 8px;
       border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .research-card:hover {
-      transform: scale(1.01);
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--card-hover-shadow);
     }
-    .research-card .research-title {
+    .card .card-title {
       font-size: 1rem;
       font-weight: 600;
       color: var(--heading-color);
       margin-bottom: 0.4rem;
     }
-    .research-card .research-title a {
+    .card .card-title a {
       color: var(--heading-color);
       transition: color 0.2s ease;
     }
-    .research-card .research-title a:hover {
+    .card .card-title a:hover {
       color: var(--link-color);
+      opacity: 1;
     }
-    .research-card .research-authors {
+    .card .card-subtitle {
       font-size: 0.85rem;
       color: var(--muted-color);
       margin-bottom: 0.3rem;
     }
-    .research-card .research-status {
-      font-size: 0.8rem;
+    .card .card-description {
+      font-size: 0.9rem;
+      color: var(--text-color);
+      margin-top: 0.3rem;
+    }
+
+    /* Status Badges */
+    .status-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
       display: inline-block;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
       margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
     }
-    .research-status.submitted {
-      background-color: rgba(255, 165, 0, 0.15);
+    .status-badge.submitted {
+      background-color: rgba(255, 165, 0, 0.12);
+      color: #d48000;
+      border: 1px solid rgba(255, 165, 0, 0.25);
+    }
+    [data-theme="dark"] .status-badge.submitted {
       color: #ffa500;
-      border: 1px solid rgba(255, 165, 0, 0.3);
     }
-    .research-status.accepted {
-      background-color: rgba(0, 200, 83, 0.15);
+    .status-badge.accepted {
+      background-color: rgba(0, 200, 83, 0.12);
+      color: #1b8a3e;
+      border: 1px solid rgba(0, 200, 83, 0.25);
+    }
+    [data-theme="dark"] .status-badge.accepted {
       color: #00c853;
-      border: 1px solid rgba(0, 200, 83, 0.3);
     }
-    .research-card .research-abstract {
-      font-size: 0.85rem;
-      color: var(--muted-color);
-      line-height: 1.5;
-      margin-top: 0.5rem;
-      display: none;
-    }
-    .research-card .research-abstract.open {
-      display: block;
-    }
-    .research-card .toggle-abstract {
-      font-size: 0.8rem;
+
+    /* Toggle Abstract Button */
+    .toggle-abstract {
+      font-size: 0.78rem;
       color: var(--link-color);
       cursor: pointer;
       background: none;
       border: 1px solid var(--border-color);
       border-radius: 4px;
-      padding: 0.2rem 0.5rem;
+      padding: 0.2rem 0.6rem;
       transition: background-color 0.2s ease, color 0.2s ease;
     }
-    .research-card .toggle-abstract:hover {
+    .toggle-abstract:hover {
       background-color: var(--link-color);
-      color: var(--bg-gradient-start);
+      color: #fff;
+    }
+    .card-abstract {
+      font-size: 0.85rem;
+      color: var(--muted-color);
+      line-height: 1.6;
+      margin-top: 0.5rem;
+      display: none;
+    }
+    .card-abstract.open {
+      display: block;
     }
 
-    /* Interests Section */
-    .interests ul {
-      list-style: disc;
-      margin-left: 1.5rem;
-      font-size: 0.95rem;
-    }
-    /* Publications Section */
+    /* Publication Meta & Links */
     .pub-meta {
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--muted-color);
     }
     .pub-links {
       margin-bottom: 0.5rem;
     }
     .pub-links a {
       display: inline-block;
-      margin-right: 0.5rem;
-      font-size: 0.8rem;
-      padding: 0.3rem 0.5rem;
+      margin-right: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
       border: 1px solid var(--border-color);
       border-radius: 4px;
       color: var(--link-color);
       text-decoration: none;
+      transition: all 0.2s ease;
     }
     .pub-links a:hover {
       background-color: var(--link-color);
-      color: var(--bg-gradient-start);
+      color: #fff;
+      border-color: var(--link-color);
+      opacity: 1;
+    }
+
+    /* Project card extras */
+    .project-tech {
+      font-size: 0.75rem;
+      color: var(--muted-color);
+      margin-top: 0.3rem;
+    }
+
+    /* Teaching card extras */
+    .teaching-semester {
+      font-size: 0.8rem;
+      color: var(--muted-color);
+      font-style: italic;
     }
 
     /* ============================
@@ -340,22 +455,23 @@
       position: fixed;
       bottom: 30px;
       right: 30px;
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
+      width: 42px;
+      height: 42px;
+      font-size: 1.1rem;
       border: none;
       border-radius: 50%;
       background-color: var(--link-color);
       color: #fff;
       cursor: pointer;
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       display: none;
       align-items: center;
       justify-content: center;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
     #scrollTopBtn:hover {
-      opacity: 0.8;
+      opacity: 0.9;
+      transform: translateY(-2px);
     }
     #scrollTopBtn.show {
       display: flex;
@@ -365,48 +481,83 @@
     .theme-toggle {
       background: none;
       border: 1px solid var(--border-color);
-      border-radius: 4px;
+      border-radius: 6px;
       color: var(--text-color);
-      font-size: 1rem;
+      font-size: 0.95rem;
       cursor: pointer;
-      padding: 0.3rem 0.6rem;
+      padding: 0.4rem 0.6rem;
       transition: background-color 0.2s ease, color 0.2s ease;
+      margin-left: 0.5rem;
     }
     .theme-toggle:hover {
-      background-color: rgba(255, 165, 0, 0.2);
+      background-color: var(--link-color);
+      color: #fff;
+      border-color: var(--link-color);
+    }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 1rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.82rem;
+      color: var(--muted-color);
+    }
+    .site-footer a {
+      color: var(--muted-color);
+      transition: color 0.2s ease;
+    }
+    .site-footer a:hover {
+      color: var(--link-color);
+    }
+    .footer-icons {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .footer-icons a {
+      font-size: 1rem;
     }
 
     /* Responsive for smaller screens */
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
+        padding: 1.5rem 1rem;
       }
       .left-col {
-        margin-bottom: 2rem;
+        position: static;
+        flex: none;
+        margin-bottom: 1.5rem;
+      }
+      .navbar {
+        flex-wrap: wrap;
+        gap: 0.3rem;
       }
     }
   </style>
 </head>
 <body>
   <!-- Top Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <a href="#home">Home</a>
     <a href="#publications">Publications</a>
     <a href="#teaching">Teaching</a>
     <a href="#contact">Contact</a>
     <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">
-      <i class="fas fa-sun"></i>
+      <i class="fas fa-moon"></i>
     </button>
   </nav>
 
   <!-- Two Column Layout -->
   <div class="container" id="home">
-    <!-- Left Column: Profile, Social, Education, and Coding Animation -->
-    <div class="left-col">
-      <img src="assets/images/profile.jpg" alt="Profile Photo" class="profile-img" />
+    <!-- Left Column: Profile Sidebar -->
+    <aside class="left-col">
+      <img src="assets/images/profile.jpg" alt="Naeem Shahabi Sani" class="profile-img" />
       <div class="name">Naeem Shahabi Sani</div>
-      <div class="role">Teaching Assistant in Computer Science</div>
-      <!-- Location as clickable Google Maps link -->
+      <div class="role">PhD Candidate in Computer Science</div>
       <p class="location">
         <a href="https://www.google.com/maps/search/?api=1&query=Norman,+Oklahoma,+USA" target="_blank">
           <i class="fas fa-map-marker-alt"></i> Norman, Oklahoma, USA
@@ -416,230 +567,314 @@
         <a href="mailto:shahabi@ou.edu">shahabi@ou.edu</a>
       </p>
       <div class="social-icons">
-        <a href="https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en" target="_blank">
+        <a href="https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en" target="_blank" title="Google Scholar">
           <i class="ai ai-google-scholar"></i>
         </a>
-        <a href="assets/files/cv.pdf" target="_blank">
-			<i class="ai ai-cv"></i>
-		</a>
-        <a href="https://github.com/naeemshb" target="_blank">
+        <a href="assets/files/cv.pdf" target="_blank" title="CV">
+          <i class="ai ai-cv"></i>
+        </a>
+        <a href="https://github.com/naeemshb" target="_blank" title="GitHub">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/naeem-shahabi-sani-a50909254/" target="_blank">
+        <a href="https://www.linkedin.com/in/naeem-shahabi-sani-a50909254/" target="_blank" title="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
-        
       </div>
+
+      <div class="sidebar-divider"></div>
+
       <!-- Education block -->
       <div class="education">
-        <h3>Education</h3>
+        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
         <ul>
-          <li>PhD in Computer Science, University of Oklahoma 2021 - Present </li>
-          <li>MSc in Artificial Intelligence, Azad University, Tehran, Iran 2015-2018</li>
-          <li>BSc in Software Engineering, Azad University, Iran 2009-2014</li>
+          <li>
+            <span class="degree">PhD in Computer Science</span><br>
+            <span class="school">University of Oklahoma, 2021 &ndash; Present</span>
+          </li>
+          <li>
+            <span class="degree">MSc in Artificial Intelligence</span><br>
+            <span class="school">Azad University, Tehran, Iran, 2015 &ndash; 2018</span>
+          </li>
+          <li>
+            <span class="degree">BSc in Software Engineering</span><br>
+            <span class="school">Azad University, Iran, 2009 &ndash; 2014</span>
+          </li>
         </ul>
       </div>
-      <!-- Simple Coding Animation -->
-      <div class="code-animation"> print("Hello, world!"));</div>
-    </div>
+    </aside>
 
-    <!-- Right Column: Biography, Interests, Publications, Teaching, Contact -->
-    <div class="right-col">
-<!-- Biography Section -->
-<section class="section" id="biography">
-  <h2>Bio & Experience</h2>
-  <p class="biography">
+    <!-- Right Column: Main Content -->
+    <main class="right-col">
 
-    My name is Naeem Shahabi Sani, and I am a PhD candidate in Computer Science at the University of Oklahoma. I work under the supervision of 
-    <a href="https://cs.ou.edu/~clan/" target="_blank"> Dr. Lan</a> (advisor) and 
-    <a href="https://www.cs.ou.edu/~hougen/" target="_blank">Dr. Hougen</a> (co-advisor). Since 2016, I have been deeply interested in bio-inspired optimization algorithms. Throughout the years, this passion has developed into expertise, particularly in the application of bio-inspired algorithms to feature engineering, dimension reduction, recommendation systems, and other complex machine learning methods.
-    
-    I hold my bachelor's degree in Computer Engineering-Software and my master's in Artificial Intelligence and Robotics from Azad University (Science and Research Branch, Tehran, Iran). During this period, I discovered the profound potential of nature-inspired methods for solving complex problems. My research has included work on multi-objective ant colony optimization for community detection, as well as developing new approaches to trust-based recommender systems.
-  </p>
-  <p class="biography">
-    Today, my work focuses on optimizing the performance of classifications and robustness by creating and enhancing advanced bio-inspired methods, and by exploring the role of randomized algorithms in machine learning. I’m extremely excited about the future of this field, and I’m motivated to help develop solutions that help researchers and professionals address real-world data challenges more effectively.
-  </p>
-</section>
-
-
-      <!-- Interests Section -->
-      <section class="section" id="interests">
-        <h2>Research Interests</h2>
-        <ul style="list-style: disc; margin-left: 1.5rem;">
-          <li>Bio-inspired optimization algorithms</li>
-          <li>Feature engineering</li>
-          <li>Swarm Intelligence</li>
-          <li>Randomized algorithms</li>
-		  <li>Machine learning</li>
-		  <li>Active learning</li>
-		  
-        </ul>
+      <!-- Biography Section -->
+      <section class="section" id="biography">
+        <h2>Bio & Experience</h2>
+        <p class="biography">
+          My name is Naeem Shahabi Sani, and I am a PhD candidate in Computer Science at the University of Oklahoma. I work under the supervision of
+          <a href="https://cs.ou.edu/~clan/" target="_blank">Dr. Lan</a> (advisor) and
+          <a href="https://www.cs.ou.edu/~hougen/" target="_blank">Dr. Hougen</a> (co-advisor). Since 2016, I have been deeply interested in bio-inspired optimization algorithms. Throughout the years, this passion has developed into expertise, particularly in the application of bio-inspired algorithms to feature engineering, dimension reduction, recommendation systems, and other complex machine learning methods.
+        </p>
+        <p class="biography">
+          I hold my bachelor's degree in Computer Engineering-Software and my master's in Artificial Intelligence and Robotics from Azad University (Science and Research Branch, Tehran, Iran). During this period, I discovered the profound potential of nature-inspired methods for solving complex problems. My research has included work on multi-objective ant colony optimization for community detection, as well as developing new approaches to trust-based recommender systems.
+        </p>
+        <p class="biography">
+          Today, my work focuses on optimizing the performance of classifications and robustness by creating and enhancing advanced bio-inspired methods, and by exploring the role of randomized algorithms in machine learning. I'm extremely excited about the future of this field, and I'm motivated to help develop solutions that help researchers and professionals address real-world data challenges more effectively.
+        </p>
       </section>
 
-<section class="section" id="active-researches">
-  <h2>Active Researches</h2>
-  <div class="research-list">
+      <!-- Research Interests Section -->
+      <section class="section" id="interests">
+        <h2>Research Interests</h2>
+        <div class="interests-tags">
+          <span class="interest-tag">Bio-Inspired Optimization</span>
+          <span class="interest-tag">Feature Engineering</span>
+          <span class="interest-tag">Swarm Intelligence</span>
+          <span class="interest-tag">Randomized Algorithms</span>
+          <span class="interest-tag">Machine Learning</span>
+          <span class="interest-tag">Active Learning</span>
+        </div>
+      </section>
 
-    <div class="research-card">
-      <div class="research-title">
-        <a href="https://arxiv.org/abs/2602.13864" target="_blank">Evolving Multi-Channel Confidence-Aware Activation Functions for Missing Data with Channel Propagation</a>
-      </div>
-      <div class="research-authors">Naeem Shahabi Sani, Ferial Najiantabriz, Shayan Shafaei, Dean F. Hougen</div>
-      <span class="research-status submitted">Submitted (2026)</span>
-      <br>
-      <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
-      <div class="research-abstract">
-        We propose a method to handle missing data in neural networks by developing custom activation functions. Rather than using standard functions like ReLU that only consider feature values, we employ genetic programming to create multivariate functions incorporating the feature value, missingness indicators, and confidence scores. We introduce ChannelProp, an algorithm that tracks these reliability signals throughout the network. Testing on datasets with various types of missingness shows our approach improves classification performance compared to conventional methods that don't account for data quality indicators.
-      </div>
-    </div>
+      <!-- Active Researches Section -->
+      <section class="section" id="active-researches">
+        <h2>Active Researches</h2>
+        <div class="card-list">
 
-    <div class="research-card">
-      <div class="research-title">One-Shot Federated Low-Rank Matrix Factorization</div>
-      <span class="research-status accepted">Recently Accepted (2026)</span>
-      <br>
-      <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
-      <div class="research-abstract">
-        Low-rank matrix factorization (LRMF) is a fundamental problem with broad applications. In recent years, federated LRMF has gained intensive interests due to the increasing ethical concerns on data privacy and advancement of IoT and edge computing infrastructure. However, current federated LRMF algorithms are based on gradient descent, which requires repeated communication between distributed clients and a center. Such repeated communication is extremely inefficient and has many downsides from the energy and security perspectives. In this paper, we propose the first one-shot federated LRMF algorithm called OFMF. It only requires one round of client-center communication, by leveraging the idea of random matrix factorization. Efficiency analysis suggests OFMF is more efficient than current algorithms in both communication and local computation. Through experiments on three real-world data sets, we show OFMF achieves similar or better factorization performance than prior algorithm, while substantially improves the overall factorization efficiency (e.g., 40 times faster). We also evaluate a differentially private version of OFMF and show it performs similarly, which means OFMF additionally gains differential privacy for free.
-      </div>
-    </div>
+          <div class="card">
+            <div class="card-title">
+              <a href="https://arxiv.org/abs/2602.13864" target="_blank">Evolving Multi-Channel Confidence-Aware Activation Functions for Missing Data with Channel Propagation</a>
+            </div>
+            <div class="card-subtitle">Naeem Shahabi Sani, Ferial Najiantabriz, Shayan Shafaei, Dean F. Hougen</div>
+            <span class="status-badge submitted">Submitted (2026)</span>
+            <br>
+            <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
+            <div class="card-abstract">
+              We propose a method to handle missing data in neural networks by developing custom activation functions. Rather than using standard functions like ReLU that only consider feature values, we employ genetic programming to create multivariate functions incorporating the feature value, missingness indicators, and confidence scores. We introduce ChannelProp, an algorithm that tracks these reliability signals throughout the network. Testing on datasets with various types of missingness shows our approach improves classification performance compared to conventional methods that don't account for data quality indicators.
+            </div>
+          </div>
 
-    <div class="research-card">
-      <div class="research-title">Randomized Least Square for Efficient Low-Rank Matrix Recovery</div>
-      <span class="research-status submitted">Submitted (2026)</span>
-      <br>
-      <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
-      <div class="research-abstract">
-        Low-rank matrix recovery is a fundamental problem. Popular recovery techniques such as alternate least square (ALS) or nuclear norm minimization all require iterative optimization of the recovered matrix, which limits their efficiency. In this paper, we propose an extremely fast recovery technique based on randomized least square (RLSMR). It does not require iterative optimization, for it randomly assigns one low-rank factor and only optimizes another low-rank factor once (which are then used to recover the matrix). In experiment, we show RLSMR runs substantially faster than other techniques while maintaining competitive performance.
-      </div>
-    </div>
+          <div class="card">
+            <div class="card-title">One-Shot Federated Low-Rank Matrix Factorization</div>
+            <span class="status-badge accepted">Recently Accepted (2026)</span>
+            <br>
+            <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
+            <div class="card-abstract">
+              Low-rank matrix factorization (LRMF) is a fundamental problem with broad applications. In recent years, federated LRMF has gained intensive interests due to the increasing ethical concerns on data privacy and advancement of IoT and edge computing infrastructure. However, current federated LRMF algorithms are based on gradient descent, which requires repeated communication between distributed clients and a center. Such repeated communication is extremely inefficient and has many downsides from the energy and security perspectives. In this paper, we propose the first one-shot federated LRMF algorithm called OFMF. It only requires one round of client-center communication, by leveraging the idea of random matrix factorization. Efficiency analysis suggests OFMF is more efficient than current algorithms in both communication and local computation. Through experiments on three real-world data sets, we show OFMF achieves similar or better factorization performance than prior algorithm, while substantially improves the overall factorization efficiency (e.g., 40 times faster). We also evaluate a differentially private version of OFMF and show it performs similarly, which means OFMF additionally gains differential privacy for free.
+            </div>
+          </div>
 
+          <div class="card">
+            <div class="card-title">Randomized Least Square for Efficient Low-Rank Matrix Recovery</div>
+            <span class="status-badge submitted">Submitted (2026)</span>
+            <br>
+            <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
+            <div class="card-abstract">
+              Low-rank matrix recovery is a fundamental problem. Popular recovery techniques such as alternate least square (ALS) or nuclear norm minimization all require iterative optimization of the recovered matrix, which limits their efficiency. In this paper, we propose an extremely fast recovery technique based on randomized least square (RLSMR). It does not require iterative optimization, for it randomly assigns one low-rank factor and only optimizes another low-rank factor once (which are then used to recover the matrix). In experiment, we show RLSMR runs substantially faster than other techniques while maintaining competitive performance.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="section" id="projects">
+        <h2>Projects</h2>
+        <div class="card-list">
+          <div class="card">
+            <div class="card-title">
+              <a href="https://github.com/naeemshb/PRF" target="_blank"><i class="fab fa-github"></i> Probabilistic Random Forest (PRF)</a>
+            </div>
+            <div class="card-description">
+              An uncertainty-aware Random Forest implementation that handles measurement uncertainties in both input features and labels, making it significantly more robust in real-world scenarios where data inherently contains noise.
+            </div>
+            <div class="project-tech"><i class="fas fa-code"></i> Python</div>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              <a href="https://github.com/naeemshb/job-shop-accounting" target="_blank"><i class="fab fa-github"></i> Job-Shop Accounting Database System</a>
+            </div>
+            <div class="card-description">
+              Full-stack manufacturing tracker using Java + Azure SQL that takes you from customer order to cost accounting and job close-out.
+            </div>
+            <div class="project-tech"><i class="fas fa-code"></i> Java, Azure SQL</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Publications Section -->
+      <section class="section" id="publications">
+        <h2>Selected Publications</h2>
+        <div class="card-list">
+
+          <div class="card">
+            <div class="card-title">
+              <a href="https://link.springer.com/article/10.1007/s12652-018-1159-7" target="_blank">A multi-objective ant colony optimization algorithm for community detection in complex networks</a>
+            </div>
+            <div class="card-subtitle">N. Shahabi Sani, Mohammad Manthouri, Faezeh Farivar</div>
+            <div class="pub-meta">Journal of Ambient Intelligence and Humanized Computing, 2018</div>
+            <div class="pub-links">
+              <a href="https://link.springer.com/article/10.1007/s12652-018-1159-7" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+            </div>
+            <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
+            <div class="card-abstract">
+              Studying the structure of the evolutionary communities in complex networks is essential for detecting the relationships between their structures and functions. Recent community detection algorithms often use the single-objective optimization criterion. One such criterion is modularity which has fundamental problems and disadvantages and does not illustrate complex networks' structures. In this study, a novel multi-objective optimization algorithm based on ant colony algorithm (ACO) is recommended to solve the community detection problem in complex networks. In the proposed method, a Pareto archive is considered to store non-dominated solutions found during the algorithm's process. The proposed method maximizes both goals of community fitness and community score in a trade-off manner to solve community detection problem. In the proposed approach, updating the pheromone in ACO has been changed through Pareto concept and Pareto Archive. So, only non-dominated solutions that have entered the Pareto archive after each iteration are updated and strengthened through global updating. In contrast, the dominated solutions are weakened and forgotten through local updating. This method of updating the Pheromone will improve algorithm exploration space, and therefore, the algorithm will search and find new solutions in the optimal space. In comparison to other algorithms, the results of the experiments show that this algorithm successfully detects network structures and is competitive with the popular state-of-the-art approaches.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              <a href="https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f" target="_blank">A new strategy in trust-based recommender system using k-means clustering</a>
+            </div>
+            <div class="card-subtitle">N. Shahabi Sani, Ferial Najian Tabriz</div>
+            <div class="pub-meta">International Journal of Advanced Computer Science and Applications (IJACSA)</div>
+            <div class="pub-links">
+              <a href="https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+            </div>
+            <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
+            <div class="card-abstract">
+              Recommender systems are among the most important parts of online systems, including online stores such as Amazon, Netflix that have become very popular in the recent years. These systems lead users to finding desired information and goods in electronic environments. Recommender systems are one of the main tools to overcome the problem of information overload. Collaborative filtering (CF) is one of the best approaches for recommender systems and are spreading as a dominant approach. However, they have the problem of coldstart and data sparsity. Trust-based approaches try to create a neighborhood and network of trusted users that demonstrate users' trust in each other's opinions. As such, these systems recommend items based on users' relationships. In the proposed method, we try to resolve the problems of low coverage rate and high RMSE rate in trust-based recommender systems using k-means clustering and ant colony algorithm (TBRSK). For clustering data, the k-means method has been used on MovieLens and Epinion datasets and the rating matrix is calculated to have the least overlapping.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Teaching Section -->
+      <section class="section" id="teaching">
+        <h2>Teaching</h2>
+        <p style="margin-bottom: 1rem;">
+          <strong>Graduate Teaching Assistant</strong>, University of Oklahoma, School of Computer Science
+        </p>
+        <ul style="list-style: none; padding: 0; margin: 0 0 1.2rem 0; font-size: 0.9rem; color: var(--text-color);">
+          <li style="margin-bottom: 0.4rem;"><i class="fas fa-chalkboard-teacher" style="color: var(--link-color); margin-right: 0.4rem;"></i> Mentored students through office hours and targeted help sessions, emphasizing rigorous reasoning and clear problem decomposition.</li>
+          <li style="margin-bottom: 0.4rem;"><i class="fas fa-lightbulb" style="color: var(--link-color); margin-right: 0.4rem;"></i> Provided algorithm walkthroughs (e.g., how/why an approach works, edge cases, and complexity reasoning) to strengthen students' conceptual understanding.</li>
+          <li style="margin-bottom: 0.4rem;"><i class="fas fa-tasks" style="color: var(--link-color); margin-right: 0.4rem;"></i> Evaluated assignments and exams with standardized rubrics; delivered constructive feedback to improve future performance.</li>
+          <li><i class="fas fa-users" style="color: var(--link-color); margin-right: 0.4rem;"></i> Supported course logistics by answering questions, resolving confusion early, and ensuring consistent expectations across sections.</li>
+        </ul>
+        <div class="card-list">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-shield-alt"></i> Cybersecurity</div>
+            <div class="teaching-semester">Spring 2026</div>
+          </div>
+          <div class="card">
+            <div class="card-title"><i class="fas fa-project-diagram"></i> Discrete Structures</div>
+            <div class="teaching-semester">Fall 2024, Fall 2025</div>
+          </div>
+          <div class="card">
+            <div class="card-title"><i class="fas fa-sort-amount-up"></i> Algorithm Analysis</div>
+            <div class="teaching-semester">Spring 2025</div>
+          </div>
+          <div class="card">
+            <div class="card-title"><i class="fas fa-robot"></i> Machine Learning</div>
+            <div class="teaching-semester">Spring 2024</div>
+          </div>
+          <div class="card">
+            <div class="card-title"><i class="fas fa-infinity"></i> Theory of Computation</div>
+            <div class="teaching-semester">Fall 2023</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>
+          For inquiries, please email me at <a href="mailto:shahabi@ou.edu">shahabi@ou.edu</a>. I look forward to connecting!
+        </p>
+      </section>
+
+    </main>
   </div>
-</section>
 
-<!-- Projects Section -->
-<section class="section" id="projects">
-  <h2>Projects</h2>
-  <ul style="list-style: disc; margin-left: 1.5rem;">
-    <li>
-      <a href="https://github.com/naeemshb/PRF" target="_blank">
-        Probabilistic Random Forest (PRF)
-      </a> — An uncertainty‑aware Random Forest implementation that handles measurement uncertainties in both input features and labels, making it significantly more robust in real-world scenarios where data inherently contains noise.
-    </li>
-    <li>
-      <a href="https://github.com/naeemshb/job-shop-accounting" target="_blank">
-        Job-Shop Accounting Database System
-      </a> — Full‑stack manufacturing tracker using Java + Azure SQL that takes you from customer order to cost accounting and job close‑out.
-    </li>
-  </ul>
- </section>
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" title="Scroll to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-<!-- Publications Section -->
-<section class="section" id="publications">
-  <h2>Selected Publications</h2>
-  <div class="research-list">
-
-    <div class="research-card">
-      <div class="research-title">
-        <a href="https://link.springer.com/article/10.1007/s12652-018-1159-7" target="_blank">A multi-objective ant colony optimization algorithm for community detection in complex networks</a>
-      </div>
-      <div class="research-authors">N. Shahabi Sani, Mohammad Manthouri, Faezeh Farivar</div>
-      <div class="pub-meta">
-        <span class="pub-badge">Journal of Ambient Intelligence and Humanized Computing</span>
-      </div>
-      <div class="pub-links">
-        <a href="https://link.springer.com/article/10.1007/s12652-018-1159-7" target="_blank">Paper</a>
-      </div>
-      <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
-      <div class="research-abstract">
-        Studying the structure of the evolutionary communities in complex networks is essential for detecting the relationships between their structures and functions. Recent community detection algorithms often use the single-objective optimization criterion. One such criterion is modularity which has fundamental problems and disadvantages and does not illustrate complex networks' structures. In this study, a novel multi-objective optimization algorithm based on ant colony algorithm (ACO) is recommended to solve the community detection problem in complex networks. In the proposed method, a Pareto archive is considered to store non-dominated solutions found during the algorithm's process. The proposed method maximizes both goals of community fitness and community score in a trade-off manner to solve community detection problem. In the proposed approach, updating the pheromone in ACO has been changed through Pareto concept and Pareto Archive. So, only non-dominated solutions that have entered the Pareto archive after each iteration are updated and strengthened through global updating. In contrast, the dominated solutions are weakened and forgotten through local updating. This method of updating the Pheromone will improve algorithm exploration space, and therefore, the algorithm will search and find new solutions in the optimal space. In comparison to other algorithms, the results of the experiments show that this algorithm successfully detects network structures and is competitive with the popular state-of-the-art approaches.
-      </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-icons">
+      <a href="https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+      <a href="https://github.com/naeemshb" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/naeem-shahabi-sani-a50909254/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
+    <p>&copy; 2026 Naeem Shahabi Sani. Last updated: February 2026.</p>
+  </footer>
 
-    <div class="research-card">
-      <div class="research-title">
-        <a href="https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f" target="_blank">A new strategy in trust-based recommender system using k-means clustering</a>
-      </div>
-      <div class="research-authors">N. Shahabi Sani, Ferial Najian Tabriz</div>
-      <div class="pub-meta">
-        <span class="pub-badge">International Journal of Advanced Computer Science and Applications (IJACSA)</span>
-      </div>
-      <div class="pub-links">
-        <a href="https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f" target="_blank">Paper</a>
-      </div>
-      <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
-      <div class="research-abstract">
-        Recommender systems are among the most important parts of online systems, including online stores such as Amazon, Netflix that have become very popular in the recent years. These systems lead users to finding desired information and goods in electronic environments. Recommender systems are one of the main tools to overcome the problem of information overload. Collaborative filtering (CF) is one of the best approaches for recommender systems and are spreading as a dominant approach. However, they have the problem of coldstart and data sparsity. Trust-based approaches try to create a neighborhood and network of trusted users that demonstrate users' trust in each other's opinions. As such, these systems recommend items based on users' relationships. In the proposed method, we try to resolve the problems of low coverage rate and high RMSE rate in trust-based recommender systems using k-means clustering and ant colony algorithm (TBRSK). For clustering data, the k-means method has been used on MovieLens and Epinion datasets and the rating matrix is calculated to have the least overlapping.
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section class="section" id="contact">
-  <h2>Contact</h2>
-  <p>
-    For inquiries, please email me at <a href="mailto:shahabi@ou.edu">shahabi@ou.edu</a>. I look forward to connecting!
-  </p>
-</section>
-</div>
-</div>
-
-<!-- Scroll to Top Button -->
-<button id="scrollTopBtn" title="Scroll to Top">
-<i class="fas fa-arrow-up"></i>
-</button>
-
-<!-- Publications Loader Script -->
-<script>
-// Theme Toggle
-const themeToggle = document.getElementById("themeToggle");
-const savedTheme = localStorage.getItem("theme") || "light";
-if (savedTheme === "dark") {
-  document.documentElement.setAttribute("data-theme", "dark");
-  themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-} else {
-  themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-}
-themeToggle.addEventListener("click", function () {
-  const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-  if (isDark) {
-    document.documentElement.removeAttribute("data-theme");
-    localStorage.setItem("theme", "light");
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-  } else {
+  <script>
+  // Theme Toggle
+  const themeToggle = document.getElementById("themeToggle");
+  const savedTheme = localStorage.getItem("theme") || "light";
+  if (savedTheme === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark");
     themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  } else {
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
   }
-});
+  themeToggle.addEventListener("click", function () {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    if (isDark) {
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.setItem("theme", "light");
+      themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+  });
 
-// Scroll to Top Button functionality
-window.addEventListener("scroll", () => {
-const scrollBtn = document.getElementById("scrollTopBtn");
-if (window.scrollY > 300) {
-  scrollBtn.classList.add("show");
-} else {
-  scrollBtn.classList.remove("show");
-}
-});
+  // Scroll to Top Button
+  window.addEventListener("scroll", () => {
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add("show");
+    } else {
+      scrollBtn.classList.remove("show");
+    }
+  });
 
-document.getElementById("scrollTopBtn").addEventListener("click", function () {
-window.scrollTo({ top: 0, behavior: "smooth" });
-});
+  document.getElementById("scrollTopBtn").addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 
-// Toggle abstract visibility
-function toggleAbstract(btn) {
-  const abstract = btn.nextElementSibling;
-  abstract.classList.toggle("open");
-  btn.textContent = abstract.classList.contains("open") ? "See less" : "See more";
-}
+  // Toggle abstract visibility
+  function toggleAbstract(btn) {
+    const abstract = btn.nextElementSibling;
+    abstract.classList.toggle("open");
+    btn.textContent = abstract.classList.contains("open") ? "See less" : "See more";
+  }
 
-</script>
-
-<!-- Footer or Last Updated Section -->
-<footer style="text-align: center; padding: 1rem; margin-top: 2rem;">
-<p>Last updated on: July 26, 2025</p>
-</footer>
+  // Active nav highlighting on scroll
+  const sections = document.querySelectorAll(".section[id], #home");
+  const navLinks = document.querySelectorAll(".navbar a");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const top = section.offsetTop - 100;
+      if (window.scrollY >= top) {
+        current = section.getAttribute("id");
+      }
+    });
+    // Map section IDs to nav hrefs
+    const sectionToNav = {
+      "home": "#home",
+      "biography": "#home",
+      "interests": "#home",
+      "active-researches": "#home",
+      "projects": "#home",
+      "publications": "#publications",
+      "teaching": "#teaching",
+      "contact": "#contact"
+    };
+    const activeHref = sectionToNav[current] || "#home";
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === activeHref) {
+        link.classList.add("active");
+      }
+    });
+  });
+  </script>
 </body>
 </html>
