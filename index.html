@@ -13,8 +13,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <!-- Academicons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
-  <!-- js-yaml library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 
   <style>
     /* ============================
@@ -293,60 +291,12 @@
       font-size: 0.95rem;
     }
     /* Publications Section */
-    #publications-container {
-      margin-top: 1rem;
-    }
-    .publications-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .publication {
-      display: flex;
-      gap: 1.5rem;
-      background-color: var(--paper-bg);
-      padding: 1rem;
-      border-radius: 6px;
-      border: 1px solid var(--border-color);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .publication:hover {
-      transform: scale(1.01);
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    }
-    .pub-image {
-      width: 130px;
-      height: 100px;
-      border-radius: 4px;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-      flex-shrink: 0;
-    }
-    .pub-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .pub-content .pub-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    .pub-title a {
-      color: var(--heading-color);
-      transition: color 0.2s ease;
-    }
-    .pub-title a:hover {
-      color: var(--link-color);
-    }
-    .pub-authors {
-      font-size: 0.85rem;
-      color: #bbbbbb;
-      margin-bottom: 0.5rem;
-    }
     .pub-meta {
       margin-bottom: 0.5rem;
       font-size: 0.9rem;
+    }
+    .pub-links {
+      margin-bottom: 0.5rem;
     }
     .pub-links a {
       display: inline-block;
@@ -548,49 +498,39 @@
 <!-- Publications Section -->
 <section class="section" id="publications">
   <h2>Selected Publications</h2>
-  <div id="publications-container">
+  <div class="research-list">
 
-    <!-- Publication 1 -->
-    <div class="publication">
-      <div class="pub-content">
-        <div class="pub-title">
-          <a href="https://link.springer.com/article/10.1007/s12652-018-1159-7" target="_blank">
-            A multi-objective ant colony optimization algorithm for community detection in complex networks
-          </a>
-        </div>
-        <div class="pub-authors">
-          N. Shahabi Sani, Mohammad Manthouri, Faezeh Farivar
-        </div>
-        <div class="pub-meta">
-          <span class="pub-badge">
-            Journal of Ambient Intelligence and Humanized Computing
-          </span>
-        </div>
-        <div class="pub-links">
-          <a href="https://link.springer.com/article/10.1007/s12652-018-1159-7" target="_blank">Paper</a>
-        </div>
+    <div class="research-card">
+      <div class="research-title">
+        <a href="https://link.springer.com/article/10.1007/s12652-018-1159-7" target="_blank">A multi-objective ant colony optimization algorithm for community detection in complex networks</a>
+      </div>
+      <div class="research-authors">N. Shahabi Sani, Mohammad Manthouri, Faezeh Farivar</div>
+      <div class="pub-meta">
+        <span class="pub-badge">Journal of Ambient Intelligence and Humanized Computing</span>
+      </div>
+      <div class="pub-links">
+        <a href="https://link.springer.com/article/10.1007/s12652-018-1159-7" target="_blank">Paper</a>
+      </div>
+      <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
+      <div class="research-abstract">
+        Studying the structure of the evolutionary communities in complex networks is essential for detecting the relationships between their structures and functions. Recent community detection algorithms often use the single-objective optimization criterion. One such criterion is modularity which has fundamental problems and disadvantages and does not illustrate complex networks' structures. In this study, a novel multi-objective optimization algorithm based on ant colony algorithm (ACO) is recommended to solve the community detection problem in complex networks. In the proposed method, a Pareto archive is considered to store non-dominated solutions found during the algorithm's process. The proposed method maximizes both goals of community fitness and community score in a trade-off manner to solve community detection problem. In the proposed approach, updating the pheromone in ACO has been changed through Pareto concept and Pareto Archive. So, only non-dominated solutions that have entered the Pareto archive after each iteration are updated and strengthened through global updating. In contrast, the dominated solutions are weakened and forgotten through local updating. This method of updating the Pheromone will improve algorithm exploration space, and therefore, the algorithm will search and find new solutions in the optimal space. In comparison to other algorithms, the results of the experiments show that this algorithm successfully detects network structures and is competitive with the popular state-of-the-art approaches.
       </div>
     </div>
 
-    <!-- Publication 2 -->
-    <div class="publication">
-      <div class="pub-content">
-        <div class="pub-title">
-          <a href="https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f" target="_blank">
-            A new strategy in trust-based recommender system using k-means clustering
-          </a>
-        </div>
-        <div class="pub-authors">
-          N. Shahabi Sani, Ferial Najian Tabriz
-        </div>
-        <div class="pub-meta">
-          <span class="pub-badge">
-            International Journal of Advanced Computer Science and Applications (IJACSA)
-          </span>
-        </div>
-        <div class="pub-links">
-          <a href="https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f" target="_blank">Paper</a>
-        </div>
+    <div class="research-card">
+      <div class="research-title">
+        <a href="https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f" target="_blank">A new strategy in trust-based recommender system using k-means clustering</a>
+      </div>
+      <div class="research-authors">N. Shahabi Sani, Ferial Najian Tabriz</div>
+      <div class="pub-meta">
+        <span class="pub-badge">International Journal of Advanced Computer Science and Applications (IJACSA)</span>
+      </div>
+      <div class="pub-links">
+        <a href="https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f" target="_blank">Paper</a>
+      </div>
+      <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
+      <div class="research-abstract">
+        Recommender systems are among the most important parts of online systems, including online stores such as Amazon, Netflix that have become very popular in the recent years. These systems lead users to finding desired information and goods in electronic environments. Recommender systems are one of the main tools to overcome the problem of information overload. Collaborative filtering (CF) is one of the best approaches for recommender systems and are spreading as a dominant approach. However, they have the problem of coldstart and data sparsity. Trust-based approaches try to create a neighborhood and network of trusted users that demonstrate users' trust in each other's opinions. As such, these systems recommend items based on users' relationships. In the proposed method, we try to resolve the problems of low coverage rate and high RMSE rate in trust-based recommender systems using k-means clustering and ant colony algorithm (TBRSK). For clustering data, the k-means method has been used on MovieLens and Epinion datasets and the rating matrix is calculated to have the least overlapping.
       </div>
     </div>
 
@@ -614,118 +554,6 @@
 
 <!-- Publications Loader Script -->
 <script>
-async function parseAuthors(authors) {
-if (!Array.isArray(authors)) return "";
-return authors
-  .map((author, index) => {
-    const authorHTML = author.url
-      ? `<a href="${author.url}" target="_blank">${author.name}</a>`
-      : author.name;
-    return authorHTML + (index < authors.length - 1 ? ", " : "");
-  })
-  .join("");
-}
-
-async function loadPublications() {
-try {
-  const response = await fetch("publications.yml");
-  if (!response.ok) throw new Error("Failed to load publications.yml");
-  const yamlText = await response.text();
-  const publications = jsyaml.load(yamlText).main;
-
-  const container = document.getElementById("publications-container");
-  container.innerHTML = "";
-
-  const listDiv = document.createElement("div");
-  listDiv.className = "publications-list";
-
-  for (const pub of publications) {
-    const pubDiv = document.createElement("div");
-    pubDiv.className = "publication";
-
-    let imageHtml = "";
-    if (pub.image && pub.image.length > 0) {
-      imageHtml = `
-        <div class="pub-image">
-          <img src="${pub.image}" alt="${pub.title}" onerror="this.style.display='none'">
-        </div>
-      `;
-    }
-
-    let awardsHtml = "";
-    if (pub.awards) {
-      awardsHtml = `
-        <div class="pub-awards">
-          ${pub.awards
-            .map(
-              (award) => `
-            <span class="award-badge ${award.type}">
-              ${
-                award.type === "best-poster"
-                  ? '<i class="fas fa-award"></i>'
-                  : ""
-              }
-              ${
-                award.type === "top-paper"
-                  ? '<i class="fas fa-star"></i>'
-                  : ""
-              }
-              ${award.text}
-            </span>
-          `
-            )
-            .join("")}
-        </div>
-      `;
-    }
-
-    const authorsHtml = await parseAuthors(pub.authors);
-
-    pubDiv.innerHTML = `
-      ${imageHtml}
-      <div class="pub-content">
-        <div class="pub-title">
-          ${
-            pub.pdf
-              ? `<a href="${pub.pdf}" target="_blank">${pub.title}</a>`
-              : pub.title
-          }
-        </div>
-        <div class="pub-authors">${authorsHtml}</div>
-        <div class="pub-meta">
-          <span class="pub-badge">${pub.conference || ""}</span>
-          ${awardsHtml}
-        </div>
-        <div class="pub-links">
-          ${
-            pub.pdf
-              ? `<a href="${pub.pdf}" target="_blank">PDF</a>`
-              : ""
-          }
-          ${
-            pub.page
-              ? `<a href="${pub.page}" target="_blank">Project</a>`
-              : ""
-          }
-          ${
-            pub.code
-              ? `<a href="${pub.code}" target="_blank">Code</a>`
-              : ""
-          }
-        </div>
-      </div>
-    `;
-    listDiv.appendChild(pubDiv);
-  }
-
-  container.appendChild(listDiv);
-} catch (error) {
-  console.error("Error loading publications:", error);
-  document.getElementById("publications-container").innerHTML =
-    "<p>Error loading publications. Please check the console for details.</p>";
-}
-}
-
 // Scroll to Top Button functionality
 window.addEventListener("scroll", () => {
 const scrollBtn = document.getElementById("scrollTopBtn");
@@ -747,8 +575,6 @@ function toggleAbstract(btn) {
   btn.textContent = abstract.classList.contains("open") ? "See less" : "See more";
 }
 
-// Load publications on page load
-window.addEventListener("DOMContentLoaded", loadPublications);
 </script>
 
 <!-- Footer or Last Updated Section -->
