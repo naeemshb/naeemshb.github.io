@@ -18,16 +18,35 @@
     /* ============================
        1. Base Theme Variables & Global Styles
        ============================ */
+    /* Dark theme (default) */
     :root {
-      --bg-gradient-start: #2f2f2f;  /* Light gray */
-      --bg-gradient-end: #3a3a3a;    /* Darker gray */
+      --bg-gradient-start: #2f2f2f;
+      --bg-gradient-end: #3a3a3a;
       --text-color: #dddddd;
       --heading-color: #ffffff;
-      --link-color: #ffa500;         /* Orange */
+      --link-color: #ffa500;
       --border-color: #505050;
       --paper-bg: #3a3a3a;
+      --navbar-bg: rgba(0, 0, 0, 0.25);
+      --muted-color: #bbbbbb;
+      --social-icon-color: #006400;
+      --code-color: #00ff00;
       --font-family-base: "Crimson Pro", serif;
       --font-family-mono: "Ubuntu Mono", monospace;
+    }
+    /* Light theme */
+    [data-theme="light"] {
+      --bg-gradient-start: #f5f5f5;
+      --bg-gradient-end: #e8e8e8;
+      --text-color: #333333;
+      --heading-color: #1a1a1a;
+      --link-color: #d48000;
+      --border-color: #cccccc;
+      --paper-bg: #ffffff;
+      --navbar-bg: rgba(255, 255, 255, 0.85);
+      --muted-color: #666666;
+      --social-icon-color: #2e7d32;
+      --code-color: #2e7d32;
     }
     body {
       margin: 0;
@@ -36,6 +55,7 @@
       color: var(--text-color);
       font-family: var(--font-family-base);
       line-height: 1.6;
+      transition: background 0.3s ease, color 0.3s ease;
     }
     a {
       color: var(--link-color);
@@ -57,7 +77,7 @@
       justify-content: center;
       gap: 1.5rem;
       padding: 1rem 0;
-      background: rgba(0, 0, 0, 0.25);
+      background: var(--navbar-bg);
       backdrop-filter: blur(4px);
     }
     .navbar a {
@@ -114,13 +134,13 @@
     }
     .role {
       font-size: 0.9rem;
-      color: #bbbbbb;
+      color: var(--muted-color);
       margin-bottom: 0.3rem;
     }
     /* New Location with clickable link */
     .location {
       font-size: 0.8rem;
-      color: #bbbbbb;
+      color: var(--muted-color);
       margin-bottom: 0.5rem;
     }
     .location a {
@@ -133,7 +153,7 @@
     .email {
       font-family: var(--font-family-mono);
       font-size: 0.85rem;
-      color: #bbbbbb;
+      color: var(--muted-color);
       margin-top: 0.5rem;
     }
     .social-icons {
@@ -141,9 +161,9 @@
       gap: 0.8rem;
       margin-top: 1rem;
     }
-    /* Social icons in dark green */
+    /* Social icons */
     .social-icons a {
-      color: #006400;
+      color: var(--social-icon-color);
       font-size: 1.2rem;
       transition: color 0.2s ease;
     }
@@ -170,11 +190,11 @@
     /* Simple Coding Animation (Typewriter Effect) */
     .code-animation {
       font-family: 'Courier New', monospace;
-      color: #00ff00; /* coding green */
+      color: var(--code-color);
       font-size: 0.9rem;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 0.15em solid #00ff00;
+      border-right: 0.15em solid var(--code-color);
       margin-top: 1.5rem;
       width: 0;
       animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
@@ -185,7 +205,7 @@
     }
     @keyframes blink-caret {
       from, to { border-color: transparent; }
-      50% { border-color: #00ff00; }
+      50% { border-color: var(--code-color); }
     }
 
     /* Right Column: Main Content */
@@ -239,7 +259,7 @@
     }
     .research-card .research-authors {
       font-size: 0.85rem;
-      color: #bbbbbb;
+      color: var(--muted-color);
       margin-bottom: 0.3rem;
     }
     .research-card .research-status {
@@ -261,7 +281,7 @@
     }
     .research-card .research-abstract {
       font-size: 0.85rem;
-      color: #aaaaaa;
+      color: var(--muted-color);
       line-height: 1.5;
       margin-top: 0.5rem;
       display: none;
@@ -341,6 +361,21 @@
       display: flex;
     }
 
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      color: var(--text-color);
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0.3rem 0.6rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .theme-toggle:hover {
+      background-color: rgba(255, 165, 0, 0.2);
+    }
+
     /* Responsive for smaller screens */
     @media (max-width: 768px) {
       .container {
@@ -359,6 +394,9 @@
     <a href="#publications">Publications</a>
     <a href="#teaching">Teaching</a>
     <a href="#contact">Contact</a>
+    <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">
+      <i class="fas fa-sun"></i>
+    </button>
   </nav>
 
   <!-- Two Column Layout -->
@@ -554,6 +592,26 @@
 
 <!-- Publications Loader Script -->
 <script>
+// Theme Toggle
+const themeToggle = document.getElementById("themeToggle");
+const savedTheme = localStorage.getItem("theme") || "dark";
+if (savedTheme === "light") {
+  document.documentElement.setAttribute("data-theme", "light");
+  themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+}
+themeToggle.addEventListener("click", function () {
+  const isLight = document.documentElement.getAttribute("data-theme") === "light";
+  if (isLight) {
+    document.documentElement.removeAttribute("data-theme");
+    localStorage.setItem("theme", "dark");
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  }
+});
+
 // Scroll to Top Button functionality
 window.addEventListener("scroll", () => {
 const scrollBtn = document.getElementById("scrollTopBtn");
