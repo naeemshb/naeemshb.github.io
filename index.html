@@ -15,6 +15,47 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
 
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Naeem Shahabi Sani",
+    "url": "https://naeemshb.github.io/",
+    "image": "https://naeemshb.github.io/assets/images/profile.jpg",
+    "jobTitle": "PhD Candidate in Computer Science",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "University of Oklahoma"
+    },
+    "alumniOf": [
+      {
+        "@type": "Organization",
+        "name": "University of Oklahoma"
+      },
+      {
+        "@type": "Organization",
+        "name": "Azad University"
+      }
+    ],
+    "sameAs": [
+      "https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en",
+      "https://github.com/naeemshb",
+      "https://www.linkedin.com/in/naeem-shahabi-sani-a50909254/"
+    ],
+    "knowsAbout": ["Machine Learning", "Feature Engineering", "Bio-Inspired Optimization", "Federated Learning", "Randomized Algorithms"]
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KYQ2XXTYH9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KYQ2XXTYH9');
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
 
@@ -95,6 +136,20 @@
     }
     a:hover {
       opacity: 0.85;
+    }
+
+    /* ============================
+       Scroll Progress Bar
+       ============================ */
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--link-color);
+      z-index: 200;
+      transition: width 0.1s linear;
     }
 
     /* ============================
@@ -223,6 +278,26 @@
       opacity: 1;
     }
 
+    /* CV Download Button */
+    .cv-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: var(--link-color);
+      border-radius: 6px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .cv-download:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
     /* Sidebar Divider */
     .sidebar-divider {
       width: 80%;
@@ -288,6 +363,17 @@
       margin-bottom: 1rem;
     }
 
+    /* Scroll Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* Research Interests as Tags */
     .interests-tags {
       display: flex;
@@ -350,6 +436,16 @@
       font-size: 0.9rem;
       color: var(--text-color);
       margin-top: 0.3rem;
+    }
+
+    /* Citation count */
+    .citation-count {
+      font-size: 0.78rem;
+      color: var(--muted-color);
+      margin-left: 0.3rem;
+    }
+    .citation-count i {
+      margin-right: 0.2rem;
     }
 
     /* Status Badges */
@@ -473,6 +569,52 @@
       }
     }
 
+    /* Contact Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      max-width: 500px;
+      margin-top: 1rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      font-family: var(--font-family-base);
+      font-size: 0.9rem;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      background: var(--paper-bg);
+      color: var(--text-color);
+      transition: border-color 0.2s ease;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--link-color);
+    }
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .contact-form button {
+      align-self: flex-start;
+      padding: 0.5rem 1.5rem;
+      font-family: var(--font-family-base);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: var(--link-color);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .contact-form button:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
     /* ============================
        4. Scroll to Top Button
        ============================ */
@@ -561,10 +703,16 @@
         flex-wrap: wrap;
         gap: 0.3rem;
       }
+      .contact-form {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Scroll Progress Bar -->
+  <div id="progressBar"></div>
+
   <!-- Top Navigation -->
   <nav class="navbar" id="navbar">
     <a href="#home">Home</a>
@@ -595,9 +743,6 @@
         <a href="https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en" target="_blank" title="Google Scholar">
           <i class="ai ai-google-scholar"></i>
         </a>
-        <a href="assets/files/cv.pdf" target="_blank" title="CV">
-          <i class="ai ai-cv"></i>
-        </a>
         <a href="https://github.com/naeemshb" target="_blank" title="GitHub">
           <i class="fab fa-github"></i>
         </a>
@@ -605,6 +750,11 @@
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
+
+      <!-- CV Download Button -->
+      <a href="assets/files/cv.pdf" target="_blank" class="cv-download">
+        <i class="fas fa-download"></i> Download CV
+      </a>
 
       <div class="sidebar-divider"></div>
 
@@ -632,7 +782,7 @@
     <main class="right-col">
 
       <!-- Biography Section -->
-      <section class="section" id="biography">
+      <section class="section fade-in" id="biography">
         <h2>Bio & Experience</h2>
         <p class="biography">
           I'm a PhD candidate in Computer Science at the University of Oklahoma, advised by <a href="https://cs.ou.edu/~clan/" target="_blank">Dr. Lan</a> and <a href="https://www.cs.ou.edu/~hougen/" target="_blank">Dr. Hougen</a>. My research focuses on machine learning, artificial intelligence, and optimization, with particular emphasis on federated learning, recommender systems, randomized algorithms, low-rank matrix factorization, and learning under missing data. I develop scalable ML systems that are both theoretically grounded and effective in practice. My work spans feature engineering, dimensionality reduction, and model optimization (PCA, autoencoders, learned feature selection), including neural network design choices such as activation functions, with pipelines achieving up to 10&times; runtime speedups while maintaining accuracy. I've validated these approaches on real-world datasets including MovieLens, FilmTrust, and BookCross. My expertise covers supervised and unsupervised learning, deep learning, and privacy-preserving distributed systems including differential privacy and large-scale matrix recovery. Previously, I completed an M.Sc. in Artificial Intelligence, publishing peer-reviewed research on community detection and recommender systems using multi-objective evolutionary algorithms.
@@ -640,7 +790,7 @@
       </section>
 
       <!-- Research Interests Section -->
-      <section class="section" id="interests">
+      <section class="section fade-in" id="interests">
         <h2>Research Interests</h2>
         <div class="interests-tags">
           <span class="interest-tag">Bio-Inspired Optimization</span>
@@ -654,7 +804,7 @@
       </section>
 
       <!-- Active Researches Section -->
-      <section class="section" id="active-researches">
+      <section class="section fade-in" id="active-researches">
         <h2>Active Researches</h2>
         <div class="card-list">
 
@@ -705,7 +855,7 @@
       </section>
 
       <!-- Projects Section -->
-      <section class="section" id="projects">
+      <section class="section fade-in" id="projects">
         <h2>Projects</h2>
         <div class="card-list">
           <div class="card">
@@ -730,13 +880,14 @@
       </section>
 
       <!-- Publications Section -->
-      <section class="section" id="publications">
+      <section class="section fade-in" id="publications">
         <h2>Selected Publications</h2>
         <div class="card-list">
 
           <div class="card">
             <div class="card-title">
               <a href="https://link.springer.com/article/10.1007/s12652-018-1159-7" target="_blank">A multi-objective ant colony optimization algorithm for community detection in complex networks</a>
+              <span class="citation-count" id="cite-1"><i class="fas fa-quote-right"></i> Loading...</span>
             </div>
             <div class="card-subtitle">N. Shahabi Sani, Mohammad Manthouri, Faezeh Farivar</div>
             <div class="pub-meta">Journal of Ambient Intelligence and Humanized Computing, 2018</div>
@@ -752,6 +903,7 @@
           <div class="card">
             <div class="card-title">
               <a href="https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f" target="_blank">A new strategy in trust-based recommender system using k-means clustering</a>
+              <span class="citation-count" id="cite-2"><i class="fas fa-quote-right"></i> Loading...</span>
             </div>
             <div class="card-subtitle">N. Shahabi Sani, Ferial Najian Tabriz</div>
             <div class="pub-meta">International Journal of Advanced Computer Science and Applications (IJACSA)</div>
@@ -768,7 +920,7 @@
       </section>
 
       <!-- Teaching Section -->
-      <section class="section" id="teaching">
+      <section class="section fade-in" id="teaching">
         <h2>Teaching</h2>
         <p style="margin-bottom: 1rem;">
           <strong>Graduate Teaching Assistant</strong>, University of Oklahoma, School of Computer Science
@@ -808,11 +960,18 @@
       </section>
 
       <!-- Contact Section -->
-      <section class="section" id="contact">
+      <section class="section fade-in" id="contact">
         <h2>Contact</h2>
         <p>
-          For inquiries, please email me at <a href="mailto:shahabi@ou.edu">shahabi@ou.edu</a>. I look forward to connecting!
+          For inquiries, feel free to email me at <a href="mailto:shahabi@ou.edu">shahabi@ou.edu</a> or use the form below.
         </p>
+        <form class="contact-form" id="contactForm">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+          <p id="formStatus" style="font-size: 0.85rem; display: none;"></p>
+        </form>
       </section>
 
     </main>
@@ -856,6 +1015,14 @@
     }
   });
 
+  // Scroll Progress Bar
+  window.addEventListener("scroll", () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById("progressBar").style.width = progress + "%";
+  });
+
   // Scroll to Top Button
   window.addEventListener("scroll", () => {
     const scrollBtn = document.getElementById("scrollTopBtn");
@@ -877,6 +1044,17 @@
     btn.textContent = abstract.classList.contains("open") ? "See less" : "See more";
   }
 
+  // Scroll fade-in animations
+  const fadeElements = document.querySelectorAll(".fade-in");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.1 });
+  fadeElements.forEach(el => observer.observe(el));
+
   // Active nav highlighting on scroll
   const sections = document.querySelectorAll(".section[id], #home");
   const navLinks = document.querySelectorAll(".navbar a");
@@ -888,7 +1066,6 @@
         current = section.getAttribute("id");
       }
     });
-    // Map section IDs to nav hrefs
     const sectionToNav = {
       "home": "#home",
       "biography": "#home",
@@ -906,6 +1083,43 @@
         link.classList.add("active");
       }
     });
+  });
+
+  // Fetch Google Scholar citation counts via Semantic Scholar API
+  async function loadCitations() {
+    const papers = [
+      { id: "cite-1", query: "A multi-objective ant colony optimization algorithm for community detection" },
+      { id: "cite-2", query: "A new strategy in trust-based recommender system using k-means clustering" }
+    ];
+    for (const paper of papers) {
+      try {
+        const resp = await fetch("https://api.semanticscholar.org/graph/v1/paper/search?query=" + encodeURIComponent(paper.query) + "&fields=citationCount&limit=1");
+        const data = await resp.json();
+        if (data.data && data.data.length > 0 && data.data[0].citationCount != null) {
+          document.getElementById(paper.id).innerHTML = '<i class="fas fa-quote-right"></i> ' + data.data[0].citationCount + ' citations';
+        } else {
+          document.getElementById(paper.id).textContent = '';
+        }
+      } catch (e) {
+        document.getElementById(paper.id).textContent = '';
+      }
+    }
+  }
+  loadCitations();
+
+  // Contact form — opens mailto with pre-filled fields
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const name = this.name.value;
+    const email = this.email.value;
+    const message = this.message.value;
+    const subject = encodeURIComponent("Website Inquiry from " + name);
+    const body = encodeURIComponent("From: " + name + " (" + email + ")\n\n" + message);
+    window.location.href = "mailto:shahabi@ou.edu?subject=" + subject + "&body=" + body;
+    const status = document.getElementById("formStatus");
+    status.style.display = "block";
+    status.style.color = "var(--link-color)";
+    status.textContent = "Opening your email client...";
   });
   </script>
 </body>
