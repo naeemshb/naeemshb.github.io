@@ -449,11 +449,28 @@
       margin-top: 0.3rem;
     }
 
-    /* Teaching card extras */
+    /* Teaching grid */
+    .teaching-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+    }
+    .teaching-grid .card {
+      text-align: center;
+      padding: 1rem;
+    }
+    .teaching-grid .card-title {
+      font-size: 0.9rem;
+    }
     .teaching-semester {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--muted-color);
       font-style: italic;
+    }
+    @media (max-width: 768px) {
+      .teaching-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     /* ============================
@@ -770,7 +787,7 @@
           <li style="margin-bottom: 0.4rem;"><i class="fas fa-tasks" style="color: var(--link-color); margin-right: 0.4rem;"></i> Evaluated assignments and exams with standardized rubrics; delivered constructive feedback to improve future performance.</li>
           <li><i class="fas fa-users" style="color: var(--link-color); margin-right: 0.4rem;"></i> Supported course logistics by answering questions, resolving confusion early, and ensuring consistent expectations across sections.</li>
         </ul>
-        <div class="card-list">
+        <div class="teaching-grid">
           <div class="card">
             <div class="card-title"><i class="fas fa-shield-alt"></i> Cybersecurity</div>
             <div class="teaching-semester">Spring 2026</div>
