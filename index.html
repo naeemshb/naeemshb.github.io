@@ -1085,18 +1085,18 @@
     });
   });
 
-  // Fetch Google Scholar citation counts via Semantic Scholar API
+  // Fetch citation counts via Semantic Scholar API (direct paper IDs)
   async function loadCitations() {
     const papers = [
-      { id: "cite-1", query: "A multi-objective ant colony optimization algorithm for community detection" },
-      { id: "cite-2", query: "A new strategy in trust-based recommender system using k-means clustering" }
+      { id: "cite-1", paperId: "DOI:10.1007/s12652-018-1159-7" },
+      { id: "cite-2", paperId: "995b01f7049173e26a0d69525d309ec09d08ed1f" }
     ];
     for (const paper of papers) {
       try {
-        const resp = await fetch("https://api.semanticscholar.org/graph/v1/paper/search?query=" + encodeURIComponent(paper.query) + "&fields=citationCount&limit=1");
+        const resp = await fetch("https://api.semanticscholar.org/graph/v1/paper/" + paper.paperId + "?fields=citationCount");
         const data = await resp.json();
-        if (data.data && data.data.length > 0 && data.data[0].citationCount != null) {
-          document.getElementById(paper.id).innerHTML = '<i class="fas fa-quote-right"></i> ' + data.data[0].citationCount + ' citations';
+        if (data.citationCount != null) {
+          document.getElementById(paper.id).innerHTML = '<i class="fas fa-quote-right"></i> ' + data.citationCount + ' citations';
         } else {
           document.getElementById(paper.id).textContent = '';
         }
