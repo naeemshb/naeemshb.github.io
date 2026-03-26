@@ -1,4 +1,25 @@
 main:
+  - title: "Evolving Multi-Channel Confidence-Aware Activation Functions for Missing Data with Channel Propagation"
+    authors:
+      - name: "Naeem Shahabi Sani"
+        url: "https://naeemshb.github.io/"
+      - name: "Ferial Najiantabriz"
+      - name: "Shayan Shafaei"
+      - name: "Dean Frederick Hougen"
+    conference: "ACM Genetic and Evolutionary Computation Conference (ACM GECCO), 9 pages, July 2026"
+    pdf: "https://arxiv.org/abs/2602.13864"
+
+  - title: "One-Shot Federated Low-Rank Matrix Factorization"
+    authors:
+      - name: "Naeem Shahabi Sani"
+        url: "https://naeemshb.github.io/"
+      - name: "Shayan Shafaei"
+      - name: "Shangqing Zhao"
+      - name: "Qi Li"
+      - name: "Dean F. Hougen"
+      - name: "Chao Lan"
+    conference: "SCRS International Conference on Information Technology and Artificial Intelligence (SCRS ITAI), 9 pages, March 2026"
+
   - title: "A multi-objective ant colony optimization algorithm for community detection in complex networks"
     authors:
       - name: "Naeem Shahabi Sani"
