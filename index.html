@@ -40,6 +40,7 @@
     ],
     "sameAs": [
       "https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en",
+      "https://orcid.org/0000-0003-3224-5371",
       "https://github.com/naeemshb",
       "https://www.linkedin.com/in/naeem-shahabi-sani-a50909254/"
     ],
@@ -57,7 +58,7 @@
   </script>
 
   <!-- Favicon -->
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -372,6 +373,29 @@
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* News Section */
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .news-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .news-list li:last-child {
+      border-bottom: none;
+    }
+    .news-date {
+      display: inline-block;
+      min-width: 5rem;
+      font-weight: 700;
+      color: var(--link-color);
+      margin-right: 0.5rem;
     }
 
     /* Research Interests as Tags */
@@ -733,6 +757,9 @@
         <a href="https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en" target="_blank" title="Google Scholar">
           <i class="ai ai-google-scholar"></i>
         </a>
+        <a href="https://orcid.org/0000-0003-3224-5371" target="_blank" title="ORCID">
+          <i class="ai ai-orcid"></i>
+        </a>
         <a href="https://github.com/naeemshb" target="_blank" title="GitHub">
           <i class="fab fa-github"></i>
         </a>
@@ -777,6 +804,15 @@
         <p class="biography">
           I'm a PhD candidate in Computer Science at the University of Oklahoma, advised by <a href="https://cs.ou.edu/~clan/" target="_blank">Dr. Lan</a> and <a href="https://www.cs.ou.edu/~hougen/" target="_blank">Dr. Hougen</a>. My research focuses on machine learning, artificial intelligence, and optimization, with particular emphasis on federated learning, recommender systems, randomized algorithms, low-rank matrix factorization, and learning under missing data. I develop scalable ML systems that are both theoretically grounded and effective in practice. My work spans feature engineering, dimensionality reduction, and model optimization (PCA, autoencoders, learned feature selection), including neural network design choices such as activation functions, with pipelines achieving up to 10&times; runtime speedups while maintaining accuracy. I've validated these approaches on real-world datasets including MovieLens, FilmTrust, and BookCross. My expertise covers supervised and unsupervised learning, deep learning, and privacy-preserving distributed systems including differential privacy and large-scale matrix recovery. Previously, I completed an M.Sc. in Artificial Intelligence, publishing peer-reviewed research on community detection and recommender systems using multi-objective evolutionary algorithms.
         </p>
+      </section>
+
+      <!-- News Section -->
+      <section class="section fade-in" id="news">
+        <h2>News</h2>
+        <ul class="news-list">
+          <li><span class="news-date">Jul 2026</span> Paper accepted at <strong>ACM GECCO 2026</strong>: "Evolving Multi-Channel Confidence-Aware Activation Functions for Missing Data with Channel Propagation"</li>
+          <li><span class="news-date">Mar 2026</span> Paper accepted at <strong>SCRS ITAI 2026</strong>: "One-Shot Federated Low-Rank Matrix Factorization"</li>
+        </ul>
       </section>
 
       <!-- Research Interests Section -->
