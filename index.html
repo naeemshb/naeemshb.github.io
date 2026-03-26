@@ -436,6 +436,41 @@
       color: var(--link-color);
     }
 
+    /* Skills Section */
+    .skills-group {
+      margin-bottom: 1rem;
+    }
+    .skills-group:last-child {
+      margin-bottom: 0;
+    }
+    .skills-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted-color);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skill-tag {
+      font-size: 0.85rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      background: var(--paper-bg);
+      color: var(--text-color);
+      transition: all 0.2s ease;
+    }
+    .skill-tag:hover {
+      border-color: var(--link-color);
+      color: var(--link-color);
+      transform: translateY(-2px);
+    }
+
     /* Card Styles (shared by Active Researches, Publications, Projects, Teaching) */
     .card-list {
       display: flex;
@@ -843,6 +878,40 @@
           <span class="interest-tag">Machine Learning</span>
           <span class="interest-tag">LLM</span>
           <span class="interest-tag">GenAI</span>
+        </div>
+      </section>
+
+      <!-- Skills & Tools Section -->
+      <section class="section fade-in" id="skills">
+        <h2>Skills & Tools</h2>
+        <div class="skills-group">
+          <div class="skills-label">Languages</div>
+          <div class="skills-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">MATLAB</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <div class="skills-label">ML / AI</div>
+          <div class="skills-tags">
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Pandas</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <div class="skills-label">Tools</div>
+          <div class="skills-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">LaTeX</span>
+            <span class="skill-tag">Azure SQL</span>
+          </div>
         </div>
       </section>
 
