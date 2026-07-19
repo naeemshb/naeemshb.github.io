@@ -7,7 +7,7 @@ main:
       - name: "Shayan Shafaei"
       - name: "Dean Frederick Hougen"
     conference: "ACM Genetic and Evolutionary Computation Conference (ACM GECCO), 9 pages, July 2026"
-    pdf: "https://arxiv.org/abs/2602.13864"
+    pdf: "https://dl.acm.org/doi/abs/10.1145/3795095.3805092"
 
   - title: "One-Shot Federated Low-Rank Matrix Factorization"
     authors:
