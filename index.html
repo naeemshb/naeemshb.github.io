@@ -374,6 +374,7 @@
     }
     .news-list li:nth-child(1) { animation-delay: 0.1s; }
     .news-list li:nth-child(2) { animation-delay: 0.3s; }
+    .news-list li:nth-child(3) { animation-delay: 0.5s; }
     .news-list li:last-child {
       border-bottom: none;
     }
@@ -786,6 +787,9 @@
   <!-- Top Navigation -->
   <nav class="navbar" id="navbar">
     <a href="#home">Home</a>
+    <a href="#news">News</a>
+    <a href="#active-researches">Research</a>
+    <a href="#projects">Projects</a>
     <a href="#publications">Publications</a>
     <a href="#teaching">Teaching</a>
     <a href="#contact">Contact</a>
@@ -884,7 +888,7 @@
       <!-- Skills & Tools Section -->
       <!-- Active Researches Section -->
       <section class="section fade-in" id="active-researches">
-        <h2>Active Researches</h2>
+        <h2>Active Research</h2>
         <div class="card-list">
 
           <div class="card">
@@ -986,10 +990,11 @@
             </div>
             <div class="card-subtitle">N. Shahabi Sani, Ferial Najiantabriz, Shayan Shafaei, Dean Frederick Hougen</div>
             <div class="pub-meta">ACM Genetic and Evolutionary Computation Conference (ACM GECCO), 9 pages, July 2026</div>
-            <span class="status-badge accepted">Recently Accepted (2026)</span>
+            <span class="status-badge accepted">Published (2026)</span>
             <span class="status-badge best-paper"><i class="fas fa-award"></i> Best Paper Award &mdash; Neuroevolution Track</span>
             <div class="pub-links">
-              <a href="https://dl.acm.org/doi/abs/10.1145/3795095.3805092" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+              <a href="https://dl.acm.org/doi/abs/10.1145/3795095.3805092" target="_blank"><i class="fas fa-file-pdf"></i> Paper (ACM DL)</a>
+              <a href="https://arxiv.org/abs/2602.13864" target="_blank"><i class="ai ai-arxiv"></i> Preprint (arXiv)</a>
               <a href="assets/files/best-paper-award-gecco-2026.pdf" target="_blank"><i class="fas fa-award"></i> Award Certificate</a>
             </div>
             <button class="toggle-abstract" onclick="toggleAbstract(this)">See more</button>
@@ -1233,9 +1238,10 @@
     const sectionToNav = {
       "home": "#home",
       "biography": "#home",
-      "interests": "#home",
-      "active-researches": "#home",
-      "projects": "#home",
+      "news": "#news",
+      "interests": "#active-researches",
+      "active-researches": "#active-researches",
+      "projects": "#projects",
       "publications": "#publications",
       "teaching": "#teaching",
       "contact": "#contact"
